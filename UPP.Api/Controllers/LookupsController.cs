@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using UPP.Model;
 
 namespace UPP.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/lookups/{action}")]
     [ApiController]
     public class LookupsController : ControllerBase
     {
@@ -21,6 +22,72 @@ namespace UPP.Api.Controllers
             _hostEnvironment = hostEnvironment;
         }
 
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Lookup>>> getEquity()
+        {
+            var list = new List<Lookup>
+            {
+                new Lookup
+                {
+                    boundValue = 0,
+                    boundText = "-- select --"
+                }
+            };
+            var result = await _context.Equities.ToListAsync().ConfigureAwait(false);
+                list.AddRange(from a in result
+                              select new Lookup
+                              {
+                                  boundValue = a.EquityId,
+                                  boundText = a.EquityDesc
+                              });
+
+            return list;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Lookup>>> getGender()
+        {
+            var list = new List<Lookup>
+            {
+                new Lookup
+                {
+                    boundValue = 0,
+                    boundText = "-- select --"
+                }
+            };
+            var result = await _context.Genders.ToListAsync().ConfigureAwait(false);     
+                list.AddRange(from a in result
+                              select new Lookup
+                              {
+                                  boundValue = a.GenderId,
+                                  boundText = a.GenderDesc
+                              });
+          
+            return list;
+        }
+
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Lookup>>> getEmployeeDepartment()
+        {
+            var list = new List<Lookup>
+            {
+                new Lookup
+                {
+                    boundValue = 0,
+                    boundText = "-- select --"
+                }
+            };
+            var result = await _context.EmployeeDepartments.ToListAsync().ConfigureAwait(false);
+            list.AddRange(from a in result
+                          select new Lookup
+                          {
+                              boundValue = a.EmpDeptId,
+                              boundText = a.EmpDeptDesc
+                          });
+
+            return list;
+        }
 
 
     }

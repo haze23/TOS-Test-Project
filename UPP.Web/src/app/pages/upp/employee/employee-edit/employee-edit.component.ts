@@ -14,7 +14,7 @@ import { EmployeeService } from '../service/employee.service';
 })
 export class EmployeeEditComponent implements OnInit {
 
-  empForm: FormGroup;
+  employeeForm: FormGroup;
   employee: Employee = new Employee();
   equities: [];
   genders: [];
@@ -34,10 +34,11 @@ export class EmployeeEditComponent implements OnInit {
     this.loadlookups();
     
     let id = this.route.snapshot.paramMap.get('id');
-    this.empForm = this.formBuilder.group({ 
+    this.employeeForm = this.formBuilder.group({ 
       employeeId:[0],
       firstname: ['', Validators.required],
       lastname: ['', Validators.required],
+      identityNo: ['', Validators.required],
       dob: ['', Validators.required],
       genderId: [0, Validators.required],
       equityId: [0, Validators.required],
@@ -46,7 +47,10 @@ export class EmployeeEditComponent implements OnInit {
       website:['', Validators.required],
       email:['', Validators.required],
       contact: ['', Validators.required],
+      address: ['', Validators.required],
       startDate: ['', Validators.required],
+      endDate: [''],
+
     })
     
 
@@ -59,10 +63,11 @@ export class EmployeeEditComponent implements OnInit {
    this.employeeService.getOne(id).subscribe(type => {
      this.employee = type;
 
-     this.empForm.setValue({
+     this.employeeForm.setValue({
       employeeId: type.employeeId,
       firstname: type.firstname,
       lastname: type.lastname,
+      identityNo: type.identityNo,
       dob: type.dob,
       genderId: type.genderId,
       equityId: type.equityId,
@@ -71,6 +76,7 @@ export class EmployeeEditComponent implements OnInit {
       website: type.website,
       email: type.email,
       contact: type.contact,
+      address: type.address,
       startDate: type.startDate,
       endDate: type.endDate
      })
@@ -79,9 +85,10 @@ export class EmployeeEditComponent implements OnInit {
   }
 
   onSubmit(){
-     const formValue = this.empForm.value;
+     const formValue = this.employeeForm.value;
       this.employee.firstname = formValue.firstname;
       this.employee.lastname = formValue.lastname;
+      this.employee.identityNo = formValue.identityNo;
       this.employee.dob = formValue.dob;
       this.employee.genderId = formValue.genderId;
       this.employee.equityId = formValue.equityId;
@@ -89,6 +96,7 @@ export class EmployeeEditComponent implements OnInit {
       this.employee.website = formValue.website;
       this.employee.email = formValue.email;
       this.employee.contact = formValue.contact;
+      this.employee.address = formValue.address;
       this.employee.startDate = formValue.startDate;
       this.employee.endDate = formValue.endDate;
 
@@ -110,12 +118,14 @@ export class EmployeeEditComponent implements OnInit {
   onCancel(){
     this.employee.firstname  = '';
     this.employee.lastname  =  '';
+    this.employee.identityNo = '';
     this.employee.dob  = new Date();
     this.employee.equityId  =  0;
     this.employee.genderId  = 0; 
     this.employee.website = '';
     this.employee.email = '';
     this.employee.contact = '';
+    this.employee.address = '';
     this.employee.startDate = new Date();
     this.employee.endDate = new Date();    
   }

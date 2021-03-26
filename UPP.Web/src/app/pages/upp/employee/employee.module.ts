@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import {
   NbCardModule, NbInputModule, NbButtonModule, NbCheckboxModule,
-  NbIconModule, NbSelectModule, NbTabsetModule, NbRouteTabsetModule,
+  NbIconModule, NbSelectModule, NbTabsetModule, NbRouteTabsetModule, NbDatepickerModule,
 } from '@nebular/theme';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ThemeModule } from '../../../@theme/theme.module';
@@ -16,6 +16,7 @@ import { EmployeeRoutingModule } from './employee-routing.module';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
 import { EmployeeCreateComponent } from './employee-create.component';
+import { EmployeeEditBulkComponent } from './employee-edit-bulk/employee-edit-bulk.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { EmployeeCreateComponent } from './employee-create.component';
       EmployeeComponent,
       EmployeeCreateComponent,
       EmployeeListComponent,
-      EmployeeEditComponent
+      EmployeeEditComponent,
+      EmployeeEditBulkComponent
     ],
     imports: [
       CommonModule,
@@ -38,6 +40,7 @@ import { EmployeeCreateComponent } from './employee-create.component';
       Ng2SmartTableModule,
       ThemeModule,
       NbTabsetModule,
+      NbDatepickerModule,
       NbRouteTabsetModule,
       EmployeeRoutingModule
     ],

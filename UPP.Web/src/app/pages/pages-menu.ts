@@ -15,8 +15,8 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },  
       {
         title: 'Add New',
-        link: '/pages/facilitation/employee-edit',
-      },     
+        link: '/pages/facilitation/employee-create',
+      },    
     ],
     home: true,
   },

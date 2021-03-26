@@ -1,0 +1,102 @@
+<div class="row col-md-12">
+    <nb-card>
+        <nb-card-header>Bulk Emplyoee Registration</nb-card-header>
+        <nb-card-body>
+            <form [formGroup]="employeeBulkForm" enctype="multipart/form-data">
+
+                <div class="col-12 col-md-12 col-lg-12">
+                    <p>You may upload an Excel document for registering multiple employees. Please ensure that your
+                        document
+                        structure follows the template structure, alternatively download the template below.
+                    </p>
+                </div>
+                <hr />
+
+                <div class="col-12 col-md-8 col-lg-8  mt-2">
+                    <label for="bulk student upload"> Upload an excel document</label>
+                    <div *ngIf="!fileUpload" class="row upload-bg upload-bg-pos-relative">
+                        <span class="col-md-8">
+                            <input type="file" class="form-control upload-field "
+                                (change)="onBulkEmployeeFileChange($event)">
+                        </span>
+                        <span class="col-md-4">
+                            <i class="fa fa-arrow-circle-up col-6 text-right"></i>
+                        </span>
+                        <div class="col-md-12">
+                            <p class="col-md-6"
+                                *ngIf="bulkEmployeeUploadFile == undefined && bulkEmployeeUploadFile == null">Upload
+                                an excel
+                                document</p>
+                            <p class="col-md-6"
+                                *ngIf="(bulkEmployeeUploadFile !== undefined) && (bulkEmployeeUploadFile !== null)"
+                                style="margin-top: 5px;">
+                                {{bulkEmployeeUploadFile.name}}</p>
+                        </div>
+                    </div>
+
+                    <div *ngIf="!deleteIcon" class=" upload-bg upload-bg-pos-relative">
+
+                        <div class="upload-files row">
+                            <div class="col-10 col-md-10 col-lg-10">
+                                {{ bulkEmployeeUploadFile ? bulkEmployeeUploadFile.name : '' }}
+                            </div>
+
+                            <div class="col-2 col-md-2 col-lg-2">
+                                <button type="button" class="btn btn-link deletebtn float-right"
+                                    (click)="deleteFile()"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <p *ngIf="invalidFileSelected" class="pt-2">
+                        <ngb-alert [type]="'danger'" [dismissible]="false">
+                            Invalid file selected, only excel files allowed.Please download the <a class="text-info"
+                                (click)="downloadBulkTemplate()">Microsoft Excel Template</a>.
+                        </ngb-alert>
+                    </p>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-md-12 col-lg-12 mt-2">
+                        <small>Please download the <a class="text-info" (click)="downloadBulkTemplate()">Microsoft Excel
+                                Template</a> for bulk
+                            upload</small>
+                    </div>
+                    <div class="row col-12 col-md-8 col-lg-8 mt-2  mt-2" *ngIf="progress > 0">
+                        <div class="col-10 col-md-10 col-lg-10 text-left pl-0">
+                            {{uploadStatus}}
+                        </div>
+                        <div class="col-2 col-md-2 col-lg-2 text-right pr-0">
+                            {{progress}} %
+                        </div>
+                        <!-- Progress Bar -->
+                        <div class="progress form-group col-12 col-md-12 col-lg-12 mt-4 pl-0 pr-0" style="height: 5px;"
+                            *ngIf="progress > 0">
+
+                            <div class="progress-bar progress-bar-striped bg-info" role="progressbar"
+                                [style.width.%]="progress">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <!-- <div class="col-12 col-md-4 col-lg-4">
+                <button type="submit" class="btn btn-primary col-5 py-2 mx-1 lightBtn mt-3"
+                    [disabled]="!bulkEmployeeFormIsValid">Cancel</button>
+                <button [disabled]="!bulkEmployeeFormIsValid" (click)="onSubmitBulkEmployees()" type="submit"
+                    class="btn btn-primary col-6 py-2 mx-1 lightBtn mt-3">Add employees</button>
+            </div> -->
+                <div class="row" style="margin-top: 15px;">
+                    <div class="ol-12 col-md-4 col-lg-4">
+                        <button type="submit" [disabled]="!bulkEmployeeFormIsValid" (click)="onSubmitBulkEmployees()"
+                            nbButton status="primary" outline>Save</button>
+                        <button type="submit" style="margin-left: 10px;" (click)="onCancel()" nbButton status="primary"
+                            outline>Cancel</button>
+                    </div>
+                </div>
+
+
+            </form>
+        </nb-card-body>
+    </nb-card>
+</div>

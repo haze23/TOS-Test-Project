@@ -6,6 +6,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { EmployeeComponent } from './employee.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
+import { EmployeeCreateComponent } from './employee-create.component';
+import { EmployeeEditBulkComponent } from './employee-edit-bulk/employee-edit-bulk.component';
 
   const routes: Routes = [{
       path: '',
@@ -16,31 +18,17 @@ import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
           component: EmployeeListComponent,
         },
         {
+          path: 'employee-create',
+          component: EmployeeCreateComponent,
+        },
+        {
           path: 'employee-edit',
           component: EmployeeEditComponent,
-        },
-
+        },    
         {
-          path: 'tabs',
-          component: EmployeeEditComponent,
-          children: [
-            {
-              path: '',
-              redirectTo: 'tab1',
-              pathMatch: 'full',
-            },
-            {
-              path: 'tab1',
-              component: EmployeeListComponent,
-            },
-            {
-              path: 'tab2',
-              component: EmployeeListComponent,
-            },
-          ],
-        },
-
-     
+          path: 'employee-edit-bulk',
+          component: EmployeeEditBulkComponent,
+        }, 
       ],
   }];
   

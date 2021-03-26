@@ -1,8 +1,113 @@
-<nb-tabset>
- <nb-tab tabTitle="Simple Tab #1">
-   Tab content 1
- </nb-tab>
- <nb-tab tabTitle="Simple Tab #2">
-   Tab content 2
- </nb-tab>
-</nb-tabset>
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>Emplyoee Registration</nb-card-header>
+      <nb-card-body>
+        <form [formGroup]="employeeForm">
+          <div class="row col-md-12 nb-card-header" style="margin-bottom: 3%;">
+           Employment Details
+          </div>
+          <div class="form-group row col-sm-12">
+            <label for="startDate" class="label col-sm-2 col-form-label">Start Date</label>
+            <div class="col-sm-4">
+              <input nbInput placeholder="End Date" formControlName="startDate" [nbDatepicker]="datepicker">
+              <nb-datepicker #datepicker></nb-datepicker>
+            </div>
+            <label for="endDate" class="label col-sm-2 col-form-label">End Date</label>
+            <div class="col-sm-4">
+              <input nbInput placeholder="End Date" formControlName="endDate" [nbDatepicker]="datepicker">
+              <nb-datepicker #datepicker></nb-datepicker>
+            </div>
+          </div>
+          <div class="form-group row col-sm-12">    
+            <label for="employeeNo" class="label col-sm-2 col-form-label">Employee No.</label>
+            <div class="col-sm-4"> 
+                <input type="text" nbInput fullWidth formControlName="employeeNo">
+            </div>
+            <label for="empDeptId" class="label col-sm-2 col-form-label">Department</label>
+            <div class="col-sm-4">
+              <nb-select nbSelect fullWidth formControlName="empDeptId" [selected]="employee.empDeptId + ''">
+                <nb-option *ngFor="let e of empDepts" value="{{e.boundValue}}"> {{ e.boundText }} </nb-option>
+              </nb-select>
+            </div>
+           </div>
+           <hr />
+           <div class="row col-md-12 nb-card-header" style="margin-bottom: 3%;">
+              Personal Information
+          </div>
+          <div class="form-group row col-sm-12">
+            <label for="firstname" class="label col-sm-2 col-form-label">Firstname</label>
+            <div class="col-sm-4">
+              <input type="text" nbInput fullWidth formControlName="firstname">
+            </div>
+            <label for="lastname" class="label col-sm-2 col-form-label">Lastname</label>
+            <div class="col-sm-4">
+              <input type="text" nbInput fullWidth formControlName="lastname">
+            </div>
+          </div>
+          <div class="form-group row col-sm-12">
+            <label for="identityNo" class="label col-sm-2 col-form-label">ID</label>
+            <div class="col-sm-4">
+              <input type="text" nbInput fullWidth formControlName="identityNo">
+            </div>
+            <label for="dob" class="label col-sm-2 col-form-label">Birth Date</label>
+            <div class="col-sm-4">
+              <input nbInput placeholder="D.O.B" formControlName="dob" [nbDatepicker]="datepicker">
+              <nb-datepicker #datepicker></nb-datepicker>
+            </div>
+          </div>
+          <div class="form-group row col-sm-12">
+            <label for="equityId" class="label col-sm-2 col-form-label">Equity</label>
+            <div class="col-sm-4">
+              <nb-select nbSelect fullWidth formControlName="equityId" [selected]="employee.equityId + ''">
+                <nb-option *ngFor="let e of equities" value="{{e.boundValue}}"> {{ e.boundText }} </nb-option>
+              </nb-select>
+            </div>
+            <label for="genderId" class="label col-sm-2 col-form-label">Gender</label>
+            <div class="col-sm-4">
+              <nb-select nbSelect fullWidth formControlName="genderId" [selected]="employee.genderId + ''">
+                <nb-option *ngFor="let e of genders" value="{{e.boundValue}}"> {{ e.boundText }} </nb-option>
+              </nb-select>
+            </div>
+          </div>
+          <hr />
+          <div class="row col-md-12 nb-card-header" style="margin-bottom: 3%;">
+            Contact Information
+          </div>
+          <div class="form-group row col-sm-12">    
+           <label for="email" class="label col-sm-2 col-form-label">Email</label>
+           <div class="col-sm-4"> 
+               <input type="text" nbInput fullWidth formControlName="email">
+           </div>
+           <label for="website" class="label col-sm-2 col-form-label" >Website</label>       
+           <div class="col-sm-4"> 
+               <input type="text" nbInput fullWidth formControlName="website">
+           </div>
+          </div>
+          <div class="form-group row col-sm-12">    
+            <label for="contact" class="label col-sm-2 col-form-label">Contact No</label>
+            <div class="col-sm-4"> 
+                <input type="text" nbInput fullWidth formControlName="contact">
+            </div>
+            <label for="address" class="label col-sm-2 col-form-label" >Website</label>       
+            <div class="col-sm-4"> 
+                <input type="text" nbInput fullWidth formControlName="address">
+            </div>
+           </div>
+          <div class="form-group row">
+            <div class="col-sm-12">
+              <hr />
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="offset-sm-2 col-sm-10">
+              <button type="submit" [disabled]="!employeeForm.valid" (click)="onSubmit()" nbButton status="primary"
+                outline>Save</button>
+              <button type="submit" style="margin-left: 10px;" (click)="onCancel()" nbButton status="primary"
+                outline>Cancel</button>
+            </div>
+          </div>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>

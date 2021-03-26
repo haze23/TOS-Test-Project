@@ -14,6 +14,7 @@ namespace UPP.Model
         public int EmployeeId { get; set; }
         public virtual string Firstname { get; set; }
         public virtual string Lastname { get; set; }
+        public string IdentityNo { get; set; }
         public DateTime Dob { get; set; }
         public virtual int EquityId { get; set; }
         public virtual int GenderId { get; set; }
@@ -21,7 +22,8 @@ namespace UPP.Model
         public virtual string Email { get; set; }
         public virtual string Website { get; set; }
         public virtual string Contact { get; set; }
-        public  virtual string Bio { get; set; }
+        public string Address { get; set; }
+        public virtual string Bio { get; set; }
 
         [ForeignKey("EmployeeDepartment")]
         //[ForeignKey(nameof(Employee.EmployeeDepartment))]
