@@ -12,6 +12,7 @@ export class Employee {
     address:string;
     email:string;
     contact: string;
+    imageUrl: File;
     startDate: Date;
     endDate: Date;
 }

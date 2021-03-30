@@ -4,6 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { NbToastrService } from '@nebular/theme';
 import { Employee } from '../model/employee';
 import { EmployeeService } from '../service/employee.service';
+import { DomSanitizer } from '@angular/platform-browser';
+import { SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'ngx-employee',
@@ -16,11 +18,14 @@ export class EmployeeListComponent implements OnInit {
   employees: any;//Employee[] = [];
   employee: Employee = new Employee();
   counter:number;
+  employeeImage: SafeResourceUrl;
+  imageUrlId:string;
 
   constructor(
     private formbuilder: FormBuilder,
     private employeeService: EmployeeService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.getEmployees();
@@ -34,7 +39,8 @@ export class EmployeeListComponent implements OnInit {
       employeeNo: ['',Validators.required],
       website: ['',[Validators.required]],
       email: ['',[Validators.required]],
-      contact: ['',[Validators.required]]
+      contact: ['',[Validators.required]],
+      imageUrl: null
     })
 
      this.populateForm(+id)
@@ -54,7 +60,8 @@ export class EmployeeListComponent implements OnInit {
         employeeNo: type.employeeNo,
         website: type.website,
         email: type.email,
-        contact: type.contact
+        contact: type.contact,
+        imageUrl: type.imageUrl
 
        })
     })
@@ -63,6 +70,14 @@ export class EmployeeListComponent implements OnInit {
     this.employeeService.getData().subscribe(data =>{ 
       this.employees = data;
       console.log(data);
+      this.getImageUrl(this.employees[0].employeeId)
+    });  
+  }
+
+  getEmployeeImage(id: string){
+    console.log('Employee Id: ' + id)
+    this.employeeService.getEmployeeImage(id).subscribe((baseImage : any) => {
+       this.employeeImage = (this.sanitizer.bypassSecurityTrustUrl(baseImage)as any).changingThisBreaksApplicationSecurity;  
     });
   }
 
@@ -74,11 +89,17 @@ export class EmployeeListComponent implements OnInit {
     alert('request CV')
   }
 
-  
+ getImageUrl(id: any){
+  this.imageUrlId = this.employees.filter(e => e.employeeId == id).map(e => e.imageUrl);
+  //alert('Id: '+ id + ' Image Url: '  +this.imageUrlId )
+  this.getEmployeeImage(this.imageUrlId);
+ } 
+
   previous(id: any) {
      let previousId= --id;
       if(this.employees.length >= previousId){
         this.populateForm(previousId)
+        this.getImageUrl(id)
       }
   }
 
@@ -86,6 +107,7 @@ export class EmployeeListComponent implements OnInit {
     let nextId = ++id
     if(this.employees.length >= nextId){
       this.populateForm(nextId)
+      this.getImageUrl(id)
     }
   }
 
@@ -93,12 +115,14 @@ export class EmployeeListComponent implements OnInit {
     let first:any = this.employees[0];
     this.counter = first.employeeId;
     this.populateForm(this.counter)
+    this.getImageUrl(this.employees[0].employeeId)
+
   }
   last() {
-
     let last:any = this.employees[this.employees.length-1];
     this.counter = last.employeeId;
     this.populateForm(this.counter)
+    this.getImageUrl(this.employees[this.counter].employeeId)
   }
 
 }

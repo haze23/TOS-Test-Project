@@ -4,13 +4,26 @@
       <nb-card-header>Emplyoee Registration</nb-card-header>
       <nb-card-body>
         <form [formGroup]="employeeForm">
-          <div class="row col-md-12 nb-card-header" style="margin-bottom: 3%;">
+          <div class="row col-mdimageUrl-12 nb-card-header" style="margin-bottom: 3%;">
            Employment Details
           </div>
+
+          <div class="form-group row col-sm-12">
+            <label for="" class="label col-sm-2 col-form-label">Upload image</label>
+            <div class="col-sm-4">
+              <img [src]="imageUrl" class="img-style">
+              <input type="file" #Image accept=".png,.jpg,.jpeg"  (change)="handleFileInput($event.target.files)">
+            </div>
+            <div class="col-sm-6">      
+            </div>
+          </div>
+
+
+
           <div class="form-group row col-sm-12">
             <label for="startDate" class="label col-sm-2 col-form-label">Start Date</label>
             <div class="col-sm-4">
-              <input nbInput placeholder="End Date" formControlName="startDate" [nbDatepicker]="datepicker">
+              <input nbInput placeholder="Start Date" formControlName="startDate" [nbDatepicker]="datepicker">
               <nb-datepicker #datepicker></nb-datepicker>
             </div>
             <label for="endDate" class="label col-sm-2 col-form-label">End Date</label>
@@ -89,7 +102,7 @@
             <div class="col-sm-4"> 
                 <input type="text" nbInput fullWidth formControlName="contact">
             </div>
-            <label for="address" class="label col-sm-2 col-form-label" >Website</label>       
+            <label for="address" class="label col-sm-2 col-form-label" >Address</label>       
             <div class="col-sm-4"> 
                 <input type="text" nbInput fullWidth formControlName="address">
             </div>

@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NbToastrService } from '@nebular/theme';
+import { truncate } from 'fs';
 import { LocalDataSource } from 'ng2-smart-table';
 import { EmployeeService } from '../../../employee/service/employee.service';
 import { EmployeeDepartment } from '../../model/employee-department';
@@ -41,18 +42,33 @@ export class EmployeeDeptsListComponent implements OnInit {
     },
     columns:
     {
-      equityId: {
+      empDeptId: {
         title: 'ID',
         type: 'number',
-      },
-      equityCode: {
+      },           
+      empDeptDesc: {
         title: 'Desc',
         type: 'string',
-      },     
-      equityDesc: {
+      },
+      activeYn: {
         title: 'Status',
         type: 'string',
+        //valuePrepareFunction: (cell, row) => { if(row.data.activeYn == true) {  return `<p>Active</p>`;} else{return '<p>Deactivated</p>'} },
       },
+
+
+    //   rowClassFunction: (row) => {
+    //     console.log(row.data.activeYn)
+    //     if(row.data.activeYn == true){
+    //       console.log('active')
+    //         return 'Activate';
+    //     } else {
+    //       console.log('deactivated')
+
+    //         return 'Deactivated';
+    //     }
+    // },  
+
     },
     pager: {
       perPage: 10,

@@ -1,1 +1,8 @@
-<p>employee-depts-list works!</p>
+<nb-card>
+    <nb-card-header>
+      Employee Department
+    </nb-card-header>
+    <nb-card-body>
+      <ng2-smart-table [settings]="settings" [source]="source" (createConfirm)="addRecord($event)" (editConfirm)="updateRecord($event)" (deleteConfirm)="deleteRecord($event)"></ng2-smart-table>
+    </nb-card-body>
+  </nb-card>

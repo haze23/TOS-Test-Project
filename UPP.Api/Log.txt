@@ -85,3 +85,85 @@ Error occured in the PostEmployeeBulk method
    at UPP.Api.Model.Helper.ExcelFileHelper.ProcessWorkSheet(Sheet sheet, List`1& lstEmployeeDTO, WorkbookPart workbookPart, Char[] cellReferenceColumn) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Model\Helper\ExcelFileHelper.cs:line 133
    at UPP.Controllers.EmployeesController.PostEmployeeBulk(String userType) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\EmployeesController.cs:line 173
 Error occured in the PostEmployeeBulk method
+3/26/2021 12:47:09 PMSystem.FormatException: String '10/23/1990 12:00:00 AM' was not recognized as a valid DateTime.
+   at System.DateTime.ParseExact(String s, String format, IFormatProvider provider)
+   at UPP.Api.Model.Helper.ExcelFileHelper.ProcessWorkSheet(Sheet sheet, List`1& lstEmployeeDTO, WorkbookPart workbookPart, Char[] cellReferenceColumn) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Model\Helper\ExcelFileHelper.cs:line 134
+   at UPP.Controllers.EmployeesController.PostEmployeeBulk(String userType) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\EmployeesController.cs:line 173
+Error occured in the PostEmployeeBulk method
+3/26/2021 1:29:56 PMSystem.FormatException: String '23/10/1990 00:00' was not recognized as a valid DateTime.
+   at System.DateTime.ParseExact(String s, String format, IFormatProvider provider)
+   at UPP.Api.Model.Helper.ExcelFileHelper.ProcessWorkSheet(Sheet sheet, List`1& lstEmployeeDTO, WorkbookPart workbookPart, Char[] cellReferenceColumn) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Model\Helper\ExcelFileHelper.cs:line 135
+   at UPP.Controllers.EmployeesController.PostEmployeeBulk(String userType) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\EmployeesController.cs:line 173
+Error occured in the PostEmployeeBulk method
+3/26/2021 4:01:29 PMSystem.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at UPP.Api.Model.Helper.ExcelFileHelper.ProcessWorkSheet(Sheet sheet, String filePath, List`1& lstEmployeeDTO, DataTable& dataTable) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Model\Helper\ExcelFileHelper.cs:line 39
+   at UPP.Controllers.EmployeesController.PostEmployeeBulk(String userType) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\EmployeesController.cs:line 191
+Error occured in the PostEmployeeBulk method
+3/29/2021 4:32:04 PMSystem.InvalidOperationException: Incorrect Content-Type: application/json
+   at Microsoft.AspNetCore.Http.Features.FormFeature.ReadForm()
+   at Microsoft.AspNetCore.Http.DefaultHttpRequest.get_Form()
+   at UPP.Controllers.EmployeesController.PostEmployee(EmployeeDTO employeeDto) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\EmployeesController.cs:line 125
+Error occured in  PostEmployee method
+3/29/2021 5:41:17 PMSystem.ArgumentNullException: Value cannot be null. (Parameter 'value')
+   at Newtonsoft.Json.Utilities.ValidationUtils.ArgumentNotNull(Object value, String parameterName)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at UPP.Controllers.EmployeesController.PostEmployee() in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\EmployeesController.cs:line 129
+Error occured in  PostEmployee method
+3/29/2021 5:49:51 PMSystem.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at UPP.Controllers.EmployeesController.PostEmployee() in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\EmployeesController.cs:line 131
+Error occured in  PostEmployee method
+3/29/2021 11:51:40 PMSystem.ArgumentNullException: Value cannot be null. (Parameter 'path1')
+   at System.IO.Path.Combine(String path1, String path2)
+   at UPP.Controllers.EmployeesController.PostEmployee() in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\EmployeesController.cs:line 138
+Error occured in  PostEmployee method
+3/30/2021 5:31:35 PMSystem.IO.FileNotFoundException: Could not find file 'C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\images\e6c2dafc-f355-47a5-8431-7c97e8eec6af.png'.
+File name: 'C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\images\e6c2dafc-f355-47a5-8431-7c97e8eec6af.png'
+   at System.IO.FileStream.ValidateFileHandle(SafeFileHandle fileHandle)
+   at System.IO.FileStream.CreateFileOpenHandle(FileMode mode, FileShare share, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.File.ReadAllBytes(String path)
+   at UPP.Controllers.EmployeesController.GetImage(String id) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\EmployeesController.cs:line 110
+Error occured in the GetImage method
+3/30/2021 5:32:09 PMSystem.IO.FileNotFoundException: Could not find file 'C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\images\fbaf2ef7-a39d-4a6d-91ea-c81d4cec9878.png'.
+File name: 'C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\images\fbaf2ef7-a39d-4a6d-91ea-c81d4cec9878.png'
+   at System.IO.FileStream.ValidateFileHandle(SafeFileHandle fileHandle)
+   at System.IO.FileStream.CreateFileOpenHandle(FileMode mode, FileShare share, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.File.ReadAllBytes(String path)
+   at UPP.Controllers.EmployeesController.GetImage(String id) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\EmployeesController.cs:line 110
+Error occured in the GetImage method
+3/30/2021 5:33:57 PMSystem.IO.FileNotFoundException: Could not find file 'C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\images\.png'.
+File name: 'C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\images\.png'
+   at System.IO.FileStream.ValidateFileHandle(SafeFileHandle fileHandle)
+   at System.IO.FileStream.CreateFileOpenHandle(FileMode mode, FileShare share, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.File.ReadAllBytes(String path)
+   at UPP.Controllers.EmployeesController.GetImage(String id) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\EmployeesController.cs:line 110
+Error occured in the GetImage method
+3/30/2021 5:38:09 PMSystem.IO.FileNotFoundException: Could not find file 'C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\images\.png'.
+File name: 'C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\images\.png'
+   at System.IO.FileStream.ValidateFileHandle(SafeFileHandle fileHandle)
+   at System.IO.FileStream.CreateFileOpenHandle(FileMode mode, FileShare share, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.File.ReadAllBytes(String path)
+   at UPP.Controllers.EmployeesController.GetImage(String id) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\EmployeesController.cs:line 119
+Error occured in the GetImage method
+3/30/2021 5:38:30 PMSystem.IO.FileNotFoundException: Could not find file 'C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\images\.png'.
+File name: 'C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\images\.png'
+   at System.IO.FileStream.ValidateFileHandle(SafeFileHandle fileHandle)
+   at System.IO.FileStream.CreateFileOpenHandle(FileMode mode, FileShare share, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.File.ReadAllBytes(String path)
+   at UPP.Controllers.EmployeesController.GetImage(String id) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\EmployeesController.cs:line 119
+Error occured in the GetImage method
+3/30/2021 5:41:19 PMSystem.IO.FileNotFoundException: Could not find file 'C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\images\.png'.
+File name: 'C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\images\.png'
+   at System.IO.FileStream.ValidateFileHandle(SafeFileHandle fileHandle)
+   at System.IO.FileStream.CreateFileOpenHandle(FileMode mode, FileShare share, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.File.ReadAllBytes(String path)
+   at UPP.Controllers.EmployeesController.GetImage(String id) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\EmployeesController.cs:line 119
+Error occured in the GetImage method

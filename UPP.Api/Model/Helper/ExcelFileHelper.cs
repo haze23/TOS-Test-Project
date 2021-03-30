@@ -3,7 +3,9 @@ using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using UPP.Model;
@@ -33,7 +35,7 @@ namespace UPP.Api.Model.Helper
 
                 IEnumerable<Cell> cells = wsPart.Worksheet.Descendants<Cell>().OrderBy(cellReference => cellReference.CellReference);
                 var _firstColumnCells = cells.Where(cell => cell.CellReference.Value.ToString().Contains(cellReferenceColumn[0])).OrderBy(cell => cell.CellReference.Value);
-                var checkVaulue = cells.Where(cell => cell.CellReference.Value.ToString().Contains(cellReferenceColumn[0])).OrderBy(cell => int.Parse(cell.CellReference.Value.Substring(1))).Count();
+                var checkValue = cells.Where(cell => cell.CellReference.Value.ToString().Contains(cellReferenceColumn[0])).OrderBy(cell => int.Parse(cell.CellReference.Value.Substring(1))).Count();
 
                 int rowNumber = 0;
                 int cellNumber = 0;
@@ -104,9 +106,9 @@ namespace UPP.Api.Model.Helper
                         }
 
                         //we skip the firt row because it is headings, but we can check the headings to validate if they are in the correct order
-                        if (rowNumber >= 1 && rowNumber <= checkVaulue)
+                        if (rowNumber >= 1 && rowNumber <= checkValue)
                         {
-                            if (rowNumber <= checkVaulue && cellNumber < 1)
+                            if (rowNumber <= checkValue && cellNumber < 1)
                             {
                                 lstEmployeeDTO.Add(new EmployeeDTO());
                             }
@@ -130,10 +132,9 @@ namespace UPP.Api.Model.Helper
                                     }
                                 case 3:
                                     {
-                                        var x = DateTime.FromOADate(Convert.ToDouble(value));
                                         lstEmployeeDTO[rowNumber - 1].Dob = DateTime.FromOADate(Convert.ToDouble(value, new CultureInfo("en-US", true)));
                                         break;
-                                    }                         
+                                    }
                                 case 4:
                                     {
                                         lstEmployeeDTO[rowNumber - 1].EquityId = Convert.ToInt32(value, NumberFormatInfo.InvariantInfo);
@@ -168,20 +169,19 @@ namespace UPP.Api.Model.Helper
                                     {
                                         lstEmployeeDTO[rowNumber - 1].Contact = value;
                                         break;
-                                    }   
+                                    }
                                 case 11:
                                     {
-                                        var x = DateTime.FromOADate(Convert.ToDouble(value));
-                                        lstEmployeeDTO[rowNumber - 1].StartDate = DateTime.FromOADate(Convert.ToDouble(value));
+                                        lstEmployeeDTO[rowNumber - 1].StartDate = DateTime.FromOADate(Convert.ToDouble(value, new CultureInfo("en-US", true)));
                                         break;
                                     }
                                 case 12:
                                     {
-                                        var x = DateTime.FromOADate(Convert.ToDouble(value, new CultureInfo("en-US", true)));
-                                        lstEmployeeDTO[rowNumber - 1].EndDate = DateTime.FromOADate(Convert.ToDouble(value));
+
+                                        lstEmployeeDTO[rowNumber - 1].EndDate = DateTime.FromOADate(Convert.ToDouble(value, new CultureInfo("en-US", true)));
                                         break;
                                     }
-                           
+
                             }
 
                             rowNumber++;
@@ -192,7 +192,7 @@ namespace UPP.Api.Model.Helper
                         {
                             rowNumber = 1;
                         }
-                        if (rowNumber >= checkVaulue)
+                        if (rowNumber >= checkValue)
                         {
                             rowNumber = 0;
                         }
@@ -209,5 +209,6 @@ namespace UPP.Api.Model.Helper
         }
 
 
-        }
+
     }
+}

@@ -47,14 +47,23 @@ namespace UPP.Api.Controllers
         public async Task<ActionResult<EmployeeDepartmentDTO>> GetEmployeeDepartment(int id)
         {
             var employeeDepartmentDto = new EmployeeDepartmentDTO();
-            var employeeDepartment = await _context.EmployeeDepartments.FindAsync(id).ConfigureAwait(false);
-
-            if (employeeDepartment == null)
+            try
             {
-                return NotFound();
-            }
+                var employeeDepartment = await _context.EmployeeDepartments.FindAsync(id).ConfigureAwait(false);
 
-            employeeDepartmentDto.InjectFrom(employeeDepartment);
+                if (employeeDepartment == null)
+                {
+                    return NotFound();
+                }
+
+                employeeDepartmentDto.InjectFrom(employeeDepartment);
+            }
+            catch (Exception ex)
+            {
+                string path = Path.Combine(_hostEnvironment.ContentRootPath, "Log.txt");
+                System.IO.File.AppendAllText(@path, Environment.NewLine + DateTime.Now.ToString() + ex.ToString() + Environment.NewLine + "Error occured in  GetEmployeeDepartment method");
+            }
+           
             return employeeDepartmentDto;
         }
 
@@ -84,7 +93,7 @@ namespace UPP.Api.Controllers
                 else
                 {
                     string path = Path.Combine(_hostEnvironment.ContentRootPath, "Log.txt");
-                    System.IO.File.AppendAllText(@path, Environment.NewLine + DateTime.Now.ToString() + ex.ToString() + Environment.NewLine + "Error occured in the PutEmployeeDepartment method");
+                    System.IO.File.AppendAllText(@path, Environment.NewLine + DateTime.Now.ToString() + ex.ToString() + Environment.NewLine + "Error occured in  PutEmployeeDepartment method");
                 }
             }
 
@@ -107,7 +116,7 @@ namespace UPP.Api.Controllers
             catch (Exception ex)
             {
                 string path = Path.Combine(_hostEnvironment.ContentRootPath, "Log.txt");
-                System.IO.File.AppendAllText(@path, Environment.NewLine + DateTime.Now.ToString() + ex.ToString() + Environment.NewLine + "Error occured in the Purchases PostEmployeeDepartment method");
+                System.IO.File.AppendAllText(@path, Environment.NewLine + DateTime.Now.ToString() + ex.ToString() + Environment.NewLine + "Error occured in   PostEmployeeDepartment method");
             }
             
 
@@ -118,14 +127,24 @@ namespace UPP.Api.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteEmployeeDepartment(int id)
         {
-            var employeeDepartment = await _context.EmployeeDepartments.FindAsync(id).ConfigureAwait(false);
-            if (employeeDepartment == null)
-            {
-                return NotFound();
-            }
 
-            _context.EmployeeDepartments.Remove(employeeDepartment);
-            await _context.SaveChangesAsync().ConfigureAwait(false);
+            try
+            {
+                var employeeDepartment = await _context.EmployeeDepartments.FindAsync(id).ConfigureAwait(false);
+                if (employeeDepartment == null)
+                {
+                    return NotFound();
+                }
+
+                _context.EmployeeDepartments.Remove(employeeDepartment);
+                await _context.SaveChangesAsync().ConfigureAwait(false);
+            }
+            catch (Exception ex)
+            {
+                string path = Path.Combine(_hostEnvironment.ContentRootPath, "Log.txt");
+                System.IO.File.AppendAllText(@path, Environment.NewLine + DateTime.Now.ToString() + ex.ToString() + Environment.NewLine + "Error occured in   DeleteEmployeeDepartment method");
+            }
+            
 
             return NoContent();
         }

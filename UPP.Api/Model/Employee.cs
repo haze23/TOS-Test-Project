@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -28,8 +29,9 @@ namespace UPP.Model
         [ForeignKey("EmployeeDepartment")]
         //[ForeignKey(nameof(Employee.EmployeeDepartment))]
         public virtual int EmpDeptId { get; set; }
+        public string ImageUrl { get; set; }
         public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
+        public DateTime? EndDate { get; set; }
         public virtual Equity Equity { get; set; }
         public virtual Gender Gender { get; set; }
         public virtual EmployeeDepartment EmployeeDepartment { get; set; }

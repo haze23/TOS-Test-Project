@@ -31,7 +31,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
       {
         title: 'Gender',
         link: '/pages/lookup/gender',
-      },   
+      }, 
+      {
+        title: 'Employment Department',
+        link: '/pages/lookup/employee-depts',
+      },  
     ],
     home: true,
 

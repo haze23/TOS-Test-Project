@@ -7,7 +7,7 @@ import { EmployeeDepartment } from '../model/employee-department';
 })
 export class EmployeeDeptsService {
 
-  urlPart = 'employee-depts'
+  urlPart = 'employeedepartments'
   constructor( private apiService: ApiHttpService) { }
 
   getMany(){
