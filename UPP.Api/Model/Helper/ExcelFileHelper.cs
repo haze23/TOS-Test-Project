@@ -4,6 +4,7 @@ using DocumentFormat.OpenXml.Spreadsheet;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -172,16 +173,9 @@ namespace UPP.Api.Model.Helper
                                     }
                                 case 11:
                                     {
-                                        lstEmployeeDTO[rowNumber - 1].StartDate = DateTime.FromOADate(Convert.ToDouble(value, new CultureInfo("en-US", true)));
+                                        lstEmployeeDTO[rowNumber - 2].StartDate = DateTime.FromOADate(Convert.ToDouble(value, new CultureInfo("en-US", true)));
                                         break;
-                                    }
-                                case 12:
-                                    {
-
-                                        lstEmployeeDTO[rowNumber - 1].EndDate = DateTime.FromOADate(Convert.ToDouble(value, new CultureInfo("en-US", true)));
-                                        break;
-                                    }
-
+                                    }                   
                             }
 
                             rowNumber++;

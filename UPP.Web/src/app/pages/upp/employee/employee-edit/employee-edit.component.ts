@@ -35,7 +35,7 @@ export class EmployeeEditComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.loadlookups();
+    this.loadLookups();
 
     let id = this.route.snapshot.paramMap.get('id');
     this.employeeForm = this.formBuilder.group({
@@ -167,7 +167,7 @@ export class EmployeeEditComponent implements OnInit {
     this.employee.endDate = new Date();
   }
 
-  loadlookups() {
+  loadLookups() {
     this.lookupService.getEquities().subscribe(
       res => {
         this.equities = res as [];

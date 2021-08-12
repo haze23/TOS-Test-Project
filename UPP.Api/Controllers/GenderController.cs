@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
@@ -7,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Omu.ValueInjecter;
 using UPP.Model;
+using UPP.Api.Model.Helper;
 
 namespace UPP.Api.Controllers
 {
@@ -25,12 +27,21 @@ namespace UPP.Api.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<GenderDTO>>> GetGender()
         {
+
+            //if (HttpContext.Session.GetString("Key") == null)
+            //{
+            //     HttpContext.Session.SetString("Key", "This is a test message ");
+            //}      
+
             var gender = await _context.Genders.Select(c => new GenderDTO
             {
                 GenderId = c.GenderId,
                 GenderCode = c.GenderCode,
                 GenderDesc = c.GenderDesc
             }).ToListAsync().ConfigureAwait(false);
+
+
+            HttpContext.Session.Set<List<GenderDTO>>("key", gender);
 
             return gender;
         }
@@ -56,6 +67,9 @@ namespace UPP.Api.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutGender(int id, Gender gender)
         {
+
+
+
             if (id != gender.GenderId)
             {
                 return BadRequest();
@@ -88,7 +102,7 @@ namespace UPP.Api.Controllers
         [HttpPost]
         public async Task<ActionResult<GenderDTO>> PostGender(GenderDTO genderDto)
         {
-            try
+           try
             {
                 var gender = new Gender();
                 gender.InjectFrom(genderDto);

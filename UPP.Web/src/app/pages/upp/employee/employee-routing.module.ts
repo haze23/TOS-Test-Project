@@ -8,6 +8,7 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
 import { EmployeeCreateComponent } from './employee-create.component';
 import { EmployeeEditBulkComponent } from './employee-edit-bulk/employee-edit-bulk.component';
+import { EmployeeListViewComponent } from './employee-list-view/employee-list-view.component';
 
   const routes: Routes = [{
       path: '',
@@ -16,6 +17,10 @@ import { EmployeeEditBulkComponent } from './employee-edit-bulk/employee-edit-bu
         {
           path: 'employees',
           component: EmployeeListComponent,
+        },
+        {
+          path: 'employees-list-view',
+          component: EmployeeListViewComponent,
         },
         {
           path: 'employee-create',

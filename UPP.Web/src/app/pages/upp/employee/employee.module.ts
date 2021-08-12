@@ -17,6 +17,7 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
 import { EmployeeCreateComponent } from './employee-create.component';
 import { EmployeeEditBulkComponent } from './employee-edit-bulk/employee-edit-bulk.component';
+import { EmployeeListViewComponent } from './employee-list-view/employee-list-view.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { EmployeeEditBulkComponent } from './employee-edit-bulk/employee-edit-bu
       EmployeeCreateComponent,
       EmployeeListComponent,
       EmployeeEditComponent,
-      EmployeeEditBulkComponent
+      EmployeeEditBulkComponent,
+      EmployeeListViewComponent
     ],
     imports: [
       CommonModule,
@@ -42,7 +44,10 @@ import { EmployeeEditBulkComponent } from './employee-edit-bulk/employee-edit-bu
       NbTabsetModule,
       NbDatepickerModule,
       NbRouteTabsetModule,
-      EmployeeRoutingModule
+      EmployeeRoutingModule,
+      
+      
+
     ],
   })
   export class EmployeeModule { }

@@ -1,0 +1,57 @@
+@import '../../@theme/styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/breakpoints';
+@import'../../../../style.css';
+
+@import'../../content/darkblue.min.css';
+@import'../../content/components.min.css';
+@import'../../content/layout.min.css';
+
+
+@include nb-install-component() {
+  .solar-card nb-card-header {
+    border: none;
+    padding-bottom: 0;
+  }
+
+  @include media-breakpoint-down(sm) {
+    ngx-traffic {
+      display: none;
+    }
+  }
+  .accordion-container:first-child {
+    margin-bottom: nb-theme(card-margin-bottom);
+  }
+  
+  .custom-date-picker {
+    border-radius: 0.25rem !important;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    padding: 0.4375rem 1rem;
+    background-color: #f7f9fc;
+    border-color: #e4e9f2;
+    color: #222b45;
+    border-style: solid;
+    border-width: 1px;
+    font-family: Open Sans, sans-serif;
+    -webkit-appearance: none;
+    -webkit-transition-duration: 0.15s;
+    transition-duration: 0.15s;
+    -webkit-transition-property: border, background-color, color, box-shadow;
+    transition-property: border, background-color, color, box-shadow;
+    -webkit-transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
+}
+.custom-label{
+    color: #8f9bb3;
+    font-family: Open Sans, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1rem;
+}
+.date-range-postion {
+  margin-left: 15%;
+ }
+}
+

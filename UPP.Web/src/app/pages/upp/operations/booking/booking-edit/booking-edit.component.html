@@ -1,0 +1,114 @@
+<div class="row">
+    <div class="col-md-12">
+        <nb-card>
+            <nb-card-header>Booking </nb-card-header>
+            <nb-card-body>
+                <form [formGroup]="bookingForm">
+                    <span class="hover-fx">
+                    <i class="fa fa-plus-circle enlarged-icon-style-left" (click)="addConsignorModal()"></i>
+                    </span>
+                    <span class="hover-fx">
+                        <i class="fa fa-plus-circle enlarged-icon-style-right" (click)="addConsigneeModal()"></i>
+                    </span>
+
+                    <div class="form-group row col-sm-12">
+                        <label for="consignorId" class="label col-sm-2 col-form-label">Consignor/Sender</label>
+                        <div class="col-sm-4">
+                            <!-- <nb-select nbSelect fullWidth formControlName="consignorId"
+                                [selected]="booking.consignorId + ''">
+                                <nb-option *ngFor="let e of consignors" value="{{e.boundValue}}"> {{ e.boundText }} 
+                                </nb-option>
+                            </nb-select> -->
+                            <angular2-multiselect [data]="consignors" formControlName="consignorId" [settings]="consignorSettings"
+                                name="consignorId">
+                            </angular2-multiselect>
+
+                        <!-- <input #autoInput nbInput  type="text" (input)="onChange()"  placeholder="Enter value"  [nbAutocomplete]="auto" />
+                    
+                          <nb-autocomplete #auto (selectedChange)="onSelectionChange($event)" [selected]="booking.consignorId + ''">
+                            <nb-option *ngFor="let option of consignors | async" [value]="{{e.boundValue}}"> {{ e.boundText }} 
+                            </nb-option>
+                          </nb-autocomplete>-->
+                        </div> 
+
+                        <label for="consigneeId" class="label col-sm-2 col-form-label">Consignee/Receiver</label>
+                        <div class="col-sm-4">
+                            <!-- <nb-select nbSelect fullWidth formControlName="consigneeId"
+                                [selected]="booking.consigneeId + ''">
+                                <nb-option *ngFor="let e of consignees" value="{{e.boundValue}}"> {{ e.boundText }}
+                                </nb-option>
+                            </nb-select> -->
+                            <angular2-multiselect [data]="consignees" formControlName="consigneeId" [settings]="consigneeSettings"
+                                name="consigneeId">
+                            </angular2-multiselect>
+                        </div>
+                    </div>
+                    <div class="form-group row col-sm-12">
+                        <label for="bookingDate" class="label col-sm-2 col-form-label">Booking Date</label>
+                        <div class="col-sm-4">
+                            <input nbInput placeholder="Book Date" formControlName="bookingDate"
+                                [nbDatepicker]="datepicker">
+                            <nb-datepicker #datepicker></nb-datepicker>
+                        </div>
+                        <label for="requiredDate" class="label col-sm-2 col-form-label">Expected Arrival Date</label>
+                        <div class="col-sm-4">
+                            <input nbInput placeholder="Expected Date" formControlName="requiredDate"
+                                [nbDatepicker]="datepicker">
+                            <nb-datepicker #datepicker></nb-datepicker>
+                        </div>
+                    </div>
+                    <div class="form-group row col-sm-12">
+                        <label for="fromLocationId" class="label col-sm-2 col-form-label">From Location</label>
+                        <div class="col-sm-4">
+                            <nb-select nbSelect fullWidth formControlName="fromLocationId"
+                                [selected]="booking.fromLocationId + ''">
+                                <nb-option *ngFor="let e of locations" value="{{e.boundValue}}"> {{ e.boundText }}
+                                </nb-option>
+                            </nb-select>
+                        </div>
+                        <label for="toLocationId" class="label col-sm-2 col-form-label">To Location</label>
+                        <div class="col-sm-4">
+                            <nb-select nbSelect fullWidth formControlName="toLocationId"
+                                [selected]="booking.toLocationId + ''">
+                                <nb-option *ngFor="let e of locations" value="{{e.boundValue}}"> {{ e.boundText }}
+                                </nb-option>
+                            </nb-select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <hr />
+                        </div>
+                    </div>
+                    <ngx-booking-cart></ngx-booking-cart>
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <hr />
+                        </div>
+                    </div>
+
+                    <div class="form-group row col-sm-12">
+                        <div class="col-sm-6"  id="pnl1">
+                            <ngx-booking-description-edit></ngx-booking-description-edit>
+                        </div>
+                        <div class="col-sm-6" id="pnl2">
+                            <ngx-additional-billing></ngx-additional-billing>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <hr />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="offset-sm-2 col-sm-10">
+                            <button type="submit" [disabled]="!bookingForm.valid" (click)="onSubmit()" nbButton
+                                status="primary" outline>Save</button>
+                            <button type="submit" style="margin-left: 10px;" (click)="onCancel()" nbButton
+                                status="primary" outline>Cancel</button>
+                        </div>
+                    </div>
+                </form>
+            </nb-card-body>
+        </nb-card>
+    </div>

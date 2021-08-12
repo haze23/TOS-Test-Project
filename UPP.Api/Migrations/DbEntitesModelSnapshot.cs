@@ -16,8 +16,419 @@ namespace UPP.Api.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.4")
+                .HasAnnotation("ProductVersion", "5.0.6")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("UPP.Api.Model.Area", b =>
+                {
+                    b.Property<int>("AreaId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AreaCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AreaDesc")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("AreaId");
+
+                    b.ToTable("Area");
+                });
+
+            modelBuilder.Entity("UPP.Api.Model.Booking", b =>
+                {
+                    b.Property<int>("BookingId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("BookingDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("BookingNo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ConsigneeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ConsignorId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FromLocation")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("RequiredDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ToLocation")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("BookingId");
+
+                    b.ToTable("Booking");
+                });
+
+            modelBuilder.Entity("UPP.Api.Model.BookingDescription", b =>
+                {
+                    b.Property<int>("BookingDescriptionId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<decimal>("ActualWeight")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("BookingId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CreatedDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Createdby")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("GrossWeight")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("RateCharge")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("RateId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Total")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("WeightTypeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("BookingDescriptionId");
+
+                    b.HasIndex("BookingId");
+
+                    b.HasIndex("RateId");
+
+                    b.HasIndex("WeightTypeId");
+
+                    b.ToTable("BookingDEscription");
+                });
+
+            modelBuilder.Entity("UPP.Api.Model.Consignee", b =>
+                {
+                    b.Property<int>("ConsigneeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Address")
+                        .HasColumnType("int");
+
+                    b.Property<int>("AreaId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConsigneeName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ContactNo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CountryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProvinceId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ConsigneeId");
+
+                    b.HasIndex("AreaId");
+
+                    b.HasIndex("CountryId");
+
+                    b.HasIndex("ProvinceId");
+
+                    b.ToTable("Consignee");
+                });
+
+            modelBuilder.Entity("UPP.Api.Model.Consignor", b =>
+                {
+                    b.Property<int>("ConsignorId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Address")
+                        .HasColumnType("int");
+
+                    b.Property<int>("AreaId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConsignorName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ContactNo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CountryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProvinceId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ConsignorId");
+
+                    b.HasIndex("AreaId");
+
+                    b.HasIndex("CountryId");
+
+                    b.HasIndex("ProvinceId");
+
+                    b.ToTable("Consignor");
+                });
+
+            modelBuilder.Entity("UPP.Api.Model.Country", b =>
+                {
+                    b.Property<int>("CountryId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CountryCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CountryName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("CountryId");
+
+                    b.ToTable("Country");
+                });
+
+            modelBuilder.Entity("UPP.Api.Model.Delivery", b =>
+                {
+                    b.Property<int>("DeliveryId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("ArrivalTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("BookingId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DespatchTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("TruckId")
+                        .HasColumnType("int");
+
+                    b.HasKey("DeliveryId");
+
+                    b.HasIndex("BookingId");
+
+                    b.HasIndex("TruckId");
+
+                    b.ToTable("Delivery");
+                });
+
+            modelBuilder.Entity("UPP.Api.Model.DeliveryDriver", b =>
+                {
+                    b.Property<int>("DeliveryDriverId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("DeliveryId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("assistantId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("createdDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("driverId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("isActive")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("updatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("DeliveryDriverId");
+
+                    b.HasIndex("DeliveryId");
+
+                    b.HasIndex("driverId");
+
+                    b.ToTable("DeliveryDriver");
+                });
+
+            modelBuilder.Entity("UPP.Api.Model.FuelType", b =>
+                {
+                    b.Property<int>("FuelTypeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("FuelTypeDesc")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("FuelTypeId");
+
+                    b.ToTable("FuelType");
+                });
+
+            modelBuilder.Entity("UPP.Api.Model.PaymentTypes", b =>
+                {
+                    b.Property<int>("PaymentTypesId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("PaymentTypesDesc")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("PaymentTypesId");
+
+                    b.ToTable("PaymentTypes");
+                });
+
+            modelBuilder.Entity("UPP.Api.Model.Province", b =>
+                {
+                    b.Property<int>("ProvinceId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("ProvinceCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProvinceName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ProvinceId");
+
+                    b.ToTable("Province");
+                });
+
+            modelBuilder.Entity("UPP.Api.Model.Rate", b =>
+                {
+                    b.Property<int>("RateId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("RateDesc")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("RateId");
+
+                    b.ToTable("Rate");
+                });
+
+            modelBuilder.Entity("UPP.Api.Model.TransmissionType", b =>
+                {
+                    b.Property<int>("TransmissionTypeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("TransmissionTypeDesc")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("TransmissionTypeId");
+
+                    b.ToTable("TransmissionType");
+                });
+
+            modelBuilder.Entity("UPP.Api.Model.Truck", b =>
+                {
+                    b.Property<int>("TruckId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("DatePurchased")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateSold")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("FuelTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("LicencePlate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TransmissionTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TruckDesc")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TruckNo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Weight")
+                        .HasColumnType("int");
+
+                    b.HasKey("TruckId");
+
+                    b.HasIndex("FuelTypeId");
+
+                    b.HasIndex("TransmissionTypeId");
+
+                    b.ToTable("Truck");
+                });
+
+            modelBuilder.Entity("UPP.Api.Model.WeightType", b =>
+                {
+                    b.Property<int>("WeightTypeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("WeightTypeDesc")
+                        .HasColumnType("int");
+
+                    b.HasKey("WeightTypeId");
+
+                    b.ToTable("WeightType");
+                });
 
             modelBuilder.Entity("UPP.Model.Employee", b =>
                 {
@@ -62,6 +473,9 @@ namespace UPP.Api.Migrations
                     b.Property<string>("IdentityNo")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Lastname")
                         .HasColumnType("nvarchar(max)");
 
@@ -69,9 +483,6 @@ namespace UPP.Api.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Website")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("imageUrl")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("EmployeeId");
@@ -242,6 +653,144 @@ namespace UPP.Api.Migrations
                             GenderCode = "F",
                             GenderDesc = "Female"
                         });
+                });
+
+            modelBuilder.Entity("UPP.Api.Model.BookingDescription", b =>
+                {
+                    b.HasOne("UPP.Api.Model.Booking", "Booking")
+                        .WithMany()
+                        .HasForeignKey("BookingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("UPP.Api.Model.Rate", "Rate")
+                        .WithMany()
+                        .HasForeignKey("RateId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("UPP.Api.Model.WeightType", "WeightType")
+                        .WithMany()
+                        .HasForeignKey("WeightTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Booking");
+
+                    b.Navigation("Rate");
+
+                    b.Navigation("WeightType");
+                });
+
+            modelBuilder.Entity("UPP.Api.Model.Consignee", b =>
+                {
+                    b.HasOne("UPP.Api.Model.Area", "Area")
+                        .WithMany()
+                        .HasForeignKey("AreaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("UPP.Api.Model.Country", "Country")
+                        .WithMany()
+                        .HasForeignKey("CountryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("UPP.Api.Model.Province", "Province")
+                        .WithMany()
+                        .HasForeignKey("ProvinceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Area");
+
+                    b.Navigation("Country");
+
+                    b.Navigation("Province");
+                });
+
+            modelBuilder.Entity("UPP.Api.Model.Consignor", b =>
+                {
+                    b.HasOne("UPP.Api.Model.Area", "Area")
+                        .WithMany()
+                        .HasForeignKey("AreaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("UPP.Api.Model.Country", "Country")
+                        .WithMany()
+                        .HasForeignKey("CountryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("UPP.Api.Model.Province", "Province")
+                        .WithMany()
+                        .HasForeignKey("ProvinceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Area");
+
+                    b.Navigation("Country");
+
+                    b.Navigation("Province");
+                });
+
+            modelBuilder.Entity("UPP.Api.Model.Delivery", b =>
+                {
+                    b.HasOne("UPP.Api.Model.Booking", "Booking")
+                        .WithMany()
+                        .HasForeignKey("BookingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("UPP.Api.Model.Truck", "Truck")
+                        .WithMany()
+                        .HasForeignKey("TruckId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Booking");
+
+                    b.Navigation("Truck");
+                });
+
+            modelBuilder.Entity("UPP.Api.Model.DeliveryDriver", b =>
+                {
+                    b.HasOne("UPP.Api.Model.Delivery", "Delivery")
+                        .WithMany()
+                        .HasForeignKey("DeliveryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("UPP.Model.Employee", "Employee")
+                        .WithMany()
+                        .HasForeignKey("driverId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Delivery");
+
+                    b.Navigation("Employee");
+                });
+
+            modelBuilder.Entity("UPP.Api.Model.Truck", b =>
+                {
+                    b.HasOne("UPP.Api.Model.FuelType", "FuelType")
+                        .WithMany()
+                        .HasForeignKey("FuelTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("UPP.Api.Model.TransmissionType", "TransmissionType")
+                        .WithMany()
+                        .HasForeignKey("TransmissionTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("FuelType");
+
+                    b.Navigation("TransmissionType");
                 });
 
             modelBuilder.Entity("UPP.Model.Employee", b =>

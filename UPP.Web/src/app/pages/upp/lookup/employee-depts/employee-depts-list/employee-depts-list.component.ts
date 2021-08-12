@@ -53,7 +53,7 @@ export class EmployeeDeptsListComponent implements OnInit {
       activeYn: {
         title: 'Status',
         type: 'string',
-        //valuePrepareFunction: (cell, row) => { if(row.data.activeYn == true) {  return `<p>Active</p>`;} else{return '<p>Deactivated</p>'} },
+        //valuePrepareFunction: (cell, row) => { if(row.data.activeYn == true) {  return 'Active';} else{return 'Deactivated'} },
       },
 
 

@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
@@ -45,16 +48,19 @@ namespace UPP.Controllers
                 //{
                 //    lstImageUrl.Add(Guid.NewGuid().ToString());
                 //}
-                var x = await _context.Employees.ToListAsync().ConfigureAwait(false);
-               employeeDto = await _context.Employees.Select(c => new EmployeeDTO
+                //var x = await _context.Employees.ToListAsync().ConfigureAwait(false);
+               employeeDto = await _context.Employees.Include(s => s.Gender).Include(s => s.EmployeeDepartment).Include(s => s.Equity).Select(c => new EmployeeDTO
                 {
                     EmployeeId = c.EmployeeId,
                     Firstname = c.Firstname,
                     Lastname = c.Lastname,
                     Dob = c.Dob,
                     EmpDeptId = c.EmpDeptId,
+                    EmpDeptDesc = c.EmployeeDepartment.EmpDeptDesc,
                     EquityId = c.EquityId,
+                    EquityDesc = c.Equity.EquityDesc,
                     GenderId = c.GenderId,
+                    GenderDesc = c.Gender.GenderDesc,
                     EmployeeNo = c.EmployeeNo,
                     Website = c.Website,
                     Email = c.Email,
@@ -234,7 +240,7 @@ namespace UPP.Controllers
                         var nomalisedname = name.Remove(name.IndexOf('.')).TrimStart('/');
 
                         Sheet theSheet = workbookPart.Workbook.Descendants<Sheet>().Where(s => s.Name.Value.ToLower() == nomalisedname.ToLower()).FirstOrDefault();
-                        char[] cellReferences = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M' };
+                        char[] cellReferences = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'};
 
                         List<EmployeeDTO> lstEmployeeDTO = new List<EmployeeDTO>();
 
@@ -267,8 +273,6 @@ namespace UPP.Controllers
 
         }
 
-
-
         // DELETE: api/Employees/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Employee>> DeleteEmployee(int id)
@@ -288,6 +292,6 @@ namespace UPP.Controllers
         private bool EmployeeExists(int id)
         {
             return _context.Employees.Any(e => e.EmployeeId == id);
-        }
+        }      
     }
 }

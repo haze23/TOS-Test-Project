@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Omu.ValueInjecter;
+using UPP.Api.Model.Helper;
 using UPP.Model;
 
 namespace UPP.Api.Controllers
@@ -25,6 +27,8 @@ namespace UPP.Api.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<EquityDTO>>> GetEquity()
         {
+            var gender = HttpContext.Session.Get<List<GenderDTO>>("key");
+
             var EquityDTO = await _context.Equities.Select(c => new EquityDTO
             {
                 EquityId = c.EquityId,
@@ -65,7 +69,6 @@ namespace UPP.Api.Controllers
 
             try
             {
-
                 await _context.SaveChangesAsync().ConfigureAwait(false);
             }
             catch (DbUpdateConcurrencyException)

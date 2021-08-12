@@ -1,4 +1,4 @@
-import { HttpEvent, HttpEventType } from '@angular/common/http';
+import { HttpEvent, HttpEventType, HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -6,6 +6,7 @@ import { NbToastrService } from '@nebular/theme';
 import { Employee } from '../model/employee';
 import { EmployeeService } from '../service/employee.service';
 import { requiredFileType } from '../../shared/files/file';
+import { FileService } from '../../shared/file.service';
 
 
 @Component({
@@ -28,22 +29,20 @@ export class EmployeeEditBulkComponent implements OnInit {
 
   deleteIcon = true;
   fileUpload = false;
-
+  fileUrl: string;
+  message: string;
 
   constructor(
     private employeeService: EmployeeService,
-    private formBuilder: FormBuilder,
-    private route: ActivatedRoute,
-    private router: Router,
-    private toastrService: NbToastrService,    
+    private toastrService: NbToastrService,  
+    private fileService: FileService
   ) { }
 
   ngOnInit(): void {
     this.employeeBulkForm = new FormGroup({
     });
   }
-
-
+  
   public onSubmitBulkEmployees() {
     if (this.bulkEmployeeFormIsValid) {
       this.bulkEmployeeFormData = new FormData();
@@ -69,13 +68,13 @@ export class EmployeeEditBulkComponent implements OnInit {
             this.uploadStatus= 'Upload complete';
             this.progress = 100;
             console.log('User successfully created!', event.body);
+            this.toastrService.success('Record saved successfully.');
 
            this.bulkUploaded = true;
         }
       });
     }
   }
-
 
   public onBulkEmployeeFileChange(e): void {
     console.log('upload');
@@ -102,8 +101,9 @@ export class EmployeeEditBulkComponent implements OnInit {
   }
 
   downloadBulkTemplate() {
-    this.employeeService.downloadBulkTemplate();
+    this.fileService.downloadBulkTemplate();
   }
+
   onCancel(){
 
   }

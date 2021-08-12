@@ -10,6 +10,9 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { ThemeModule } from '../../../@theme/theme.module';
 import { LookupRoutingModule } from './lookup-routing.module';
 import { EmployeeDeptsListComponent } from './employee-depts/employee-depts-list/employee-depts-list.component';
+import { PaymentTypesListComponent } from './payment-types/payment-types-list/payment-types-list.component';
+import { ProvinceListComponent } from './province/province-list/province-list.component';
+import { AreaListComponent } from './area/area-list/area-list.component';
 
 
 
@@ -18,7 +21,10 @@ import { EmployeeDeptsListComponent } from './employee-depts/employee-depts-list
     LookupComponent,
     GenderListComponent,
     EquityListComponent,
-    EmployeeDeptsListComponent
+    EmployeeDeptsListComponent,
+    PaymentTypesListComponent,
+    ProvinceListComponent,
+    AreaListComponent
   ],
   imports: [
     CommonModule,

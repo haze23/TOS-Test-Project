@@ -1,0 +1,43 @@
+<div class="row col-md-12">
+    <form [formGroup]='searchForm' class="col-md-12">
+        <div class="row">
+            <!-- <label for="searchField" class="label col-md-1 col-form-label">Search</label> -->
+            <div class="input-group col-md-10">
+                <input type="text" class="form-control col-md-6" placeholder="Search for driver" nbInput fullWidth
+                    formControlName="searchField">
+                    <span class="input-group-append col-md-2">
+                        <button class="btn btn-secondary" type="button">
+                          <i class="fa fa-search"></i>
+                        </button>
+                    </span>
+            </div>
+        </div>
+    </form>
+</div>
+<br/>
+
+<div class="row col-md-12">
+    <div class="col-md-6">
+        <div id="unAssignedDrivers" cdkDropList #unAssignedDrivers="cdkDropList"
+            [cdkDropListData]="lstUnAssignedDriversDelivery" [cdkDropListConnectedTo]="[assignedDrivers]"
+            class="driver-list" (cdkDropListDropped)="onDrop($event)">
+            <div class="driver-block" *ngFor="let deliveryDriver of lstUnAssignedDriversDelivery" cdkDrag>
+                {{deliveryDriver.employeeId}}
+            </div>
+            <div *ngIf="lstUnAssignedDriversDelivery?.length<1" class="p-4">
+                No Driver to select from
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div id="assignedDrivers" cdkDropList #assignedDrivers="cdkDropList"
+            [cdkDropListData]="lstUnAssignedDriversDelivery" [cdkDropListConnectedTo]="[unAssignedDrivers]"
+            class="driver-list" (cdkDropListDropped)="onDrop($event)">
+
+            <div class="driver-block" *ngFor="let driver of lstUnAssignedDriversDelivery" cdkDrag>{{driver.name}}</div>
+            <div *ngIf="lstUnAssignedDriversDelivery?.length<1" class="p-4">
+                Drag a driver here to assign to delivery
+            </div>
+        </div>
+    </div>
+</div>

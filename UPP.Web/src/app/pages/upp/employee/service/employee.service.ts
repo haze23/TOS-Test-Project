@@ -13,9 +13,10 @@ import { Employee } from '../model/employee';
 export class EmployeeService {
 
   urlPart = 'employees'
+  errorMgmt: any;
 
   constructor(private apiService: ApiHttpService,
-              public http: HttpClient) { }
+    public http: HttpClient) { }
 
   getMany() {
     return this.apiService.get<Employee[]>(this.urlPart)
@@ -24,24 +25,20 @@ export class EmployeeService {
     return this.apiService.get(this.urlPart);
   }
 
-  getOne(id: number){
+  getOne(id: number) {
     return this.apiService.get<Employee>(`${this.urlPart}/${id}`);
   }
 
-  getEmployeeImage(id: string) : Observable<any>{
-    // const image = this.http.get('http://localhost:4401/api/' + `${this.urlPart}/getEmployeeImage?id=${id}`);
-    // console.log("Here: " + image);
-    // debugger;
-    return this.http.get('http://localhost:4401/api/' + `${this.urlPart}/getEmployeeImage?id=${id}`,{
+  getEmployeeImage(id: string): Observable<any> {
+    return this.http.get('http://localhost:4401/api/' + `${this.urlPart}/getEmployeeImage?id=${id}`, {
     })
-    .pipe(
-      //catchError(error => this.errorHandler(error))
+      .pipe(
+        //catchError(error => this.errorHandler(error))
       );
   }
 
-  
   save(employee: Employee) {
-    return this.apiService.post<Employee>(this.urlPart,employee);
+    return this.apiService.post<Employee>(this.urlPart, employee);
   }
 
   saveEmployee(employeeFormData: FormData) {
@@ -58,7 +55,7 @@ export class EmployeeService {
   }
 
   delete(id: number) {
-   return this.apiService.delete(`${this.urlPart}/${id}`);
+    return this.apiService.delete(`${this.urlPart}/${id}`);
   }
 
   saveBulkEmployees(bulkEmployeeFormData: FormData): Observable<object> {
@@ -66,13 +63,13 @@ export class EmployeeService {
       reportProgress: true,
       observe: 'events'
     }).pipe(
-      // catchError(this.errorMgmt)
+      //catchError(this.errorMgmt)
     );
+  }  
+
+  getEmployees() {
+    return this.apiService.get<Employee[]>(this.urlPart);
   }
-  downloadBulkTemplate() {
-    alert('download template')
-    //window.open(urlPart + '/api/file/downloadBulkEmplyeeTemplate', '_self');
-  }
-  
+
 }
 

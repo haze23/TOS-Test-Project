@@ -1,0 +1,155 @@
+<!-- <div class="row">
+  <div class="col-xxxl-3 col-md-3" *ngFor="let statusCard of statusCards">
+    <ngx-status-card [title]="statusCard.title" [type]="statusCard.type"  (click)="getUrlAction(statusCard.title)" >
+      <i [ngClass]="statusCard.iconClass"></i>
+    </ngx-status-card>
+  </div>
+</div> -->
+<!-- <div class="row col-md-12">
+<section class="counters col-md-12">
+  <div class="container">
+    <div>
+      <i class="fa fa-people-carry fa-4x"></i>
+      <div class="counter" data-target="350">0</div>
+      <h3>Employees</h3>
+    </div>
+    <div>
+      <i class="fa fa-cogs fa-4x"></i>
+      <div class="counter" data-target="15">0</div>
+      <h3>Operation</h3>
+    </div>
+    <div>
+      <i class="fa fa-shipping-fast fa-4x"></i>
+      <div class="counter" data-target="74">0</div>
+      <h3>Vehicles</h3>
+    </div>
+    <div>
+      <i class="fa fa-shopping-bag fa-4x"></i>
+      <div class="counter" data-target="4575">0</div>
+      <h3>Deliveries</h3>
+    </div>
+  </div>
+</section>
+</div> -->
+
+<form [formGroup]="dateRangeForm">
+  <div class="form-group row col-sm-12 date-range-postion">
+    <label for="startDate" class="label custom-label col-sm-2 col-form-label">Start Date</label>
+    <div class="col-sm-4">
+      <input class="custom-date-picker" nbInput placeholder="Start Date" formControlName="startDate"
+        [nbDatepicker]="datepicker">
+      <nb-datepicker #datepicker></nb-datepicker>
+    </div>
+    <label for="endDate" class="label custom-label col-sm-2 col-form-label">End Date</label>
+    <div class="col-sm-4">
+      <input class="custom-date-picker" nbInput placeholder="End Date" formControlName="endDate"
+        [nbDatepicker]="datepicker">
+      <nb-datepicker #datepicker></nb-datepicker>
+    </div>
+  </div>
+  <div class="form-group row col-sm-12">
+    <button class="btn btn-primary my-2 my-sm-0 pt-2 pb-2 gt-report" type="submit"
+      style="position: absolute; right: 0; border-radius:5%;" (click)="getDashboardStats()">Get Report</button>
+  </div>
+</form>
+
+<div class="row" style="margin-top: 5%;">
+  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+    <a class="dashboard-stat dashboard-stat-v2 blue" href="/#">
+      <div class=" visual">
+        <i class="fa fa-people-carry"></i>
+      </div>
+      <div class="details">
+        <div class="number">
+          <span class="counter" data-target="15000">0</span>
+        </div>
+        <div class="desc"> Employees </div>
+      </div>
+    </a>
+  </div>
+  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+    <a class="dashboard-stat dashboard-stat-v2 red" href="/#">
+      <div class="visual">
+        <i class="fa fa-cogs"></i>
+      </div>
+      <div class="details">
+        <div class="number">
+          <span class="counter" data-target="85"></span>
+        </div>
+        <div class="desc"> Operation </div>
+      </div>
+    </a>
+  </div>
+  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+    <a class="dashboard-stat dashboard-stat-v2 blue-chambray" href="/#">
+      <div class="visual">
+        <i class="fa fa-shipping-fast"></i>
+      </div>
+      <div class="details">
+        <div class="number">
+          <span class="counter" data-target="25"></span>
+        </div>
+        <div class="desc"> Trucks </div>
+      </div>
+    </a>
+  </div>
+  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+    <a class="dashboard-stat dashboard-stat-v2 purple" href="/#">
+      <div class=" visual">
+        <i class="fa fa-shopping-bag"></i>
+      </div>
+      <div class="details">
+        <div class="number">
+          <span class="counter" data-target="188">0</span>
+        </div>
+        <div class="desc"> Deliveries </div>
+      </div>
+    </a>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="accordions-container row">
+    <div class="accordion-container col-md-12 col-lg-12 col-xxxl-12">
+      <nb-accordion multi>
+        <nb-accordion-item>
+          <nb-accordion-item-header>
+            Product Details
+          </nb-accordion-item-header>
+          <nb-accordion-item-body>
+            A nebula is an interstellar cloud of dust, hydrogen, helium and other ionized gases.
+            Originally, nebula was a name for any diffuse astronomical object,
+            including galaxies beyond the Milky Way.
+          </nb-accordion-item-body>
+        </nb-accordion-item>
+
+        <nb-accordion-item>
+          <nb-accordion-item-header>
+            Reviews
+          </nb-accordion-item-header>
+          <nb-accordion-item-body>
+            A nebula is an interstellar cloud of dust, hydrogen, helium and other ionized gases.
+            Originally, nebula was a name for any diffuse astronomical object,
+            including galaxies beyond the Milky Way.
+          </nb-accordion-item-body>
+        </nb-accordion-item>
+
+        <nb-accordion-item>
+          <nb-accordion-item-header>
+            Edit
+          </nb-accordion-item-header>
+          <nb-accordion-item-body>
+            A nebula is an interstellar cloud of dust, hydrogen, helium and other ionized gases.
+            Originally, nebula was a name for any diffuse astronomical object,
+            including galaxies beyond the Milky Way.
+          </nb-accordion-item-body>
+        </nb-accordion-item>
+      </nb-accordion>
+    </div>
+  </div>
+  <div class="row col-md-12 col-sm-12 col-lg-12">
+    <button class="btn btn-primary btn-pps-darkblue my-2 my-sm-0 pt-2 pb-2 gt-report" type="button"
+      style="position: absolute; right: 0; z-index: 5;" (click)="exportChartsToPdf()">Export To PDF</button>
+  </div>
+</div>

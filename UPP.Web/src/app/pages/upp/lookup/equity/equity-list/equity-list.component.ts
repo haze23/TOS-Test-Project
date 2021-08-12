@@ -69,14 +69,14 @@ export class EquityListComponent implements OnInit {
         this.equityService.save(this.equity).subscribe(
           res => {
             event.confirm.resolve(event.newData);
-            this.toastrService.success('Record saved successfully.', 'MIS');
+            this.toastrService.success('Record saved successfully.', 'UPP');
             this.getEquities();
           },
           (err: HttpErrorResponse) => {
             if (err.error instanceof Error) {
-              this.toastrService.danger('Error saving record. Please contact your MIS administrator', 'MIS');
+              this.toastrService.danger('Error saving record. Please contact your UPP administrator', 'UPP');
             } else {
-              this.toastrService.danger('Error saving record. Please contact your MIS administrator', 'MIS');
+              this.toastrService.danger('Error saving record. Please contact your UPP administrator', 'UPP');
             }
           });
       }
@@ -88,13 +88,13 @@ export class EquityListComponent implements OnInit {
         this.equityService.update(this.equity).subscribe(
           res => {
             event.confirm.resolve(event.newData);
-            this.toastrService.success('Record saved successfully.', 'N.P.D.R');
+            this.toastrService.success('Record saved successfully.', 'UPP');
           },
           (err: HttpErrorResponse) => {
             if (err.error instanceof Error) {
-              this.toastrService.danger('Error saving record. Please contact your N.P.D.R administrator', 'MIS');
+              this.toastrService.danger('Error saving record. Please contact your UPP administrator', 'UPP');
             } else {
-              this.toastrService.danger('Error saving record. Please contact your N.P.D.R administrator', 'MIS');
+              this.toastrService.danger('Error saving record. Please contact your UPP administrator', 'UPP');
             }
           });
       }
@@ -105,14 +105,14 @@ export class EquityListComponent implements OnInit {
           this.equityService.delete(this.equity.equityId).subscribe(
             res => {
             event.confirm.resolve(event.newData);
-            this.toastrService.success('Record deleted successfully.', 'N.P.D.R');
+            this.toastrService.success('Record deleted successfully.', 'UPP');
             this.getEquities();
           },
            (err: HttpErrorResponse) => {
             if (err.error instanceof Error) {
-              this.toastrService.danger('Error deleting record. Please contact your N.P.D.R administrator', 'MIS');
+              this.toastrService.danger('Error deleting record. Please contact your UPP administrator', 'UPP');
             } else {
-              this.toastrService.danger('Error deleting record. Please contact your N.P.D.R administrator', 'MIS');
+              this.toastrService.danger('Error deleting record. Please contact your UPPadministrator', 'UPP');
             }
           });    
         } else {

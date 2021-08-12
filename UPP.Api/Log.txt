@@ -167,3 +167,248 @@ File name: 'C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\ima
    at System.IO.File.ReadAllBytes(String path)
    at UPP.Controllers.EmployeesController.GetImage(String id) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\EmployeesController.cs:line 119
 Error occured in the GetImage method
+4/1/2021 12:40:20 PMSystem.IO.FileNotFoundException: Could not find file 'C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\System.IO.FileStream'.
+File name: 'C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\System.IO.FileStream'
+   at System.IO.FileStream.ValidateFileHandle(SafeFileHandle fileHandle)
+   at System.IO.FileStream.CreateFileOpenHandle(FileMode mode, FileShare share, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.File.ReadAllBytes(String path)
+   at UPP.Api.Controllers.FileController.GetBulkEmployeeUploadTemplate() in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\FileController.cs:line 60
+Error occured in  GetBulkEmployeeUploadTemplate method
+4/1/2021 12:41:46 PMSystem.IO.FileNotFoundException: Could not find file 'C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\System.IO.FileStream'.
+File name: 'C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\System.IO.FileStream'
+   at System.IO.FileStream.ValidateFileHandle(SafeFileHandle fileHandle)
+   at System.IO.FileStream.CreateFileOpenHandle(FileMode mode, FileShare share, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.File.ReadAllBytes(String path)
+   at UPP.Api.Controllers.FileController.GetBulkEmployeeUploadTemplate() in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\FileController.cs:line 60
+Error occured in  GetBulkEmployeeUploadTemplate method
+5/3/2021 6:27:04 PMSystem.FormatException: Input string was not in a correct format.
+   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at System.Convert.ToDouble(String value, IFormatProvider provider)
+   at UPP.Api.Model.Helper.ExcelFileHelper.ProcessWorkSheet(Sheet sheet, List`1& lstEmployeeDTO, WorkbookPart workbookPart, Char[] cellReferenceColumn) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Model\Helper\ExcelFileHelper.cs:line 175
+   at UPP.Controllers.EmployeesController.PostEmployeeBulk(String userType) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\EmployeesController.cs:line 243
+Error occured in  PostEmployeeBulk method
+5/3/2021 6:35:00 PMSystem.FormatException: Input string was not in a correct format.
+   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at System.Convert.ToDouble(String value, IFormatProvider provider)
+   at UPP.Api.Model.Helper.ExcelFileHelper.ProcessWorkSheet(Sheet sheet, List`1& lstEmployeeDTO, WorkbookPart workbookPart, Char[] cellReferenceColumn) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Model\Helper\ExcelFileHelper.cs:line 175
+   at UPP.Controllers.EmployeesController.PostEmployeeBulk(String userType) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\EmployeesController.cs:line 243
+Error occured in  PostEmployeeBulk method
+5/4/2021 2:55:34 PMSystem.FormatException: Input string was not in a correct format.
+   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at System.Convert.ToDouble(String value, IFormatProvider provider)
+   at UPP.Api.Model.Helper.ExcelFileHelper.ProcessWorkSheet(Sheet sheet, List`1& lstEmployeeDTO, WorkbookPart workbookPart, Char[] cellReferenceColumn) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Model\Helper\ExcelFileHelper.cs:line 175
+   at UPP.Controllers.EmployeesController.PostEmployeeBulk(String userType) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\EmployeesController.cs:line 243
+Error occured in  PostEmployeeBulk method
+5/4/2021 2:57:19 PMSystem.FormatException: Input string was not in a correct format.
+   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at System.Convert.ToDouble(String value, IFormatProvider provider)
+   at UPP.Api.Model.Helper.ExcelFileHelper.ProcessWorkSheet(Sheet sheet, List`1& lstEmployeeDTO, WorkbookPart workbookPart, Char[] cellReferenceColumn) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Model\Helper\ExcelFileHelper.cs:line 175
+   at UPP.Controllers.EmployeesController.PostEmployeeBulk(String userType) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\EmployeesController.cs:line 243
+Error occured in  PostEmployeeBulk method
+5/4/2021 2:58:21 PMSystem.FormatException: Input string was not in a correct format.
+   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at System.Convert.ToDouble(String value, IFormatProvider provider)
+   at UPP.Api.Model.Helper.ExcelFileHelper.ProcessWorkSheet(Sheet sheet, List`1& lstEmployeeDTO, WorkbookPart workbookPart, Char[] cellReferenceColumn) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Model\Helper\ExcelFileHelper.cs:line 175
+   at UPP.Controllers.EmployeesController.PostEmployeeBulk(String userType) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\EmployeesController.cs:line 243
+Error occured in  PostEmployeeBulk method
+5/4/2021 2:59:06 PMSystem.FormatException: Input string was not in a correct format.
+   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at System.Convert.ToDouble(String value, IFormatProvider provider)
+   at UPP.Api.Model.Helper.ExcelFileHelper.ProcessWorkSheet(Sheet sheet, List`1& lstEmployeeDTO, WorkbookPart workbookPart, Char[] cellReferenceColumn) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Model\Helper\ExcelFileHelper.cs:line 175
+   at UPP.Controllers.EmployeesController.PostEmployeeBulk(String userType) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\EmployeesController.cs:line 243
+Error occured in  PostEmployeeBulk method
+5/4/2021 3:04:55 PMSystem.FormatException: Input string was not in a correct format.
+   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at System.Convert.ToDouble(String value, IFormatProvider provider)
+   at UPP.Api.Model.Helper.ExcelFileHelper.ProcessWorkSheet(Sheet sheet, List`1& lstEmployeeDTO, WorkbookPart workbookPart, Char[] cellReferenceColumn) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Model\Helper\ExcelFileHelper.cs:line 175
+   at UPP.Controllers.EmployeesController.PostEmployeeBulk(String userType) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\EmployeesController.cs:line 243
+Error occured in  PostEmployeeBulk method
+5/4/2021 3:05:09 PMSystem.FormatException: Input string was not in a correct format.
+   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at System.Convert.ToDouble(String value, IFormatProvider provider)
+   at UPP.Api.Model.Helper.ExcelFileHelper.ProcessWorkSheet(Sheet sheet, List`1& lstEmployeeDTO, WorkbookPart workbookPart, Char[] cellReferenceColumn) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Model\Helper\ExcelFileHelper.cs:line 175
+   at UPP.Controllers.EmployeesController.PostEmployeeBulk(String userType) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\EmployeesController.cs:line 243
+Error occured in  PostEmployeeBulk method
+5/4/2021 3:05:14 PMSystem.FormatException: Input string was not in a correct format.
+   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at System.Convert.ToDouble(String value, IFormatProvider provider)
+   at UPP.Api.Model.Helper.ExcelFileHelper.ProcessWorkSheet(Sheet sheet, List`1& lstEmployeeDTO, WorkbookPart workbookPart, Char[] cellReferenceColumn) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Model\Helper\ExcelFileHelper.cs:line 175
+   at UPP.Controllers.EmployeesController.PostEmployeeBulk(String userType) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\EmployeesController.cs:line 243
+Error occured in  PostEmployeeBulk method
+5/4/2021 3:08:21 PMSystem.FormatException: Input string was not in a correct format.
+   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at System.Convert.ToDouble(String value, IFormatProvider provider)
+   at UPP.Api.Model.Helper.ExcelFileHelper.ProcessWorkSheet(Sheet sheet, List`1& lstEmployeeDTO, WorkbookPart workbookPart, Char[] cellReferenceColumn) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Model\Helper\ExcelFileHelper.cs:line 175
+   at UPP.Controllers.EmployeesController.PostEmployeeBulk(String userType) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\EmployeesController.cs:line 243
+Error occured in  PostEmployeeBulk method
+5/4/2021 4:06:26 PMSystem.FormatException: Input string was not in a correct format.
+   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at System.Convert.ToDouble(String value, IFormatProvider provider)
+   at UPP.Api.Model.Helper.ExcelFileHelper.ProcessWorkSheet(Sheet sheet, List`1& lstEmployeeDTO, WorkbookPart workbookPart, Char[] cellReferenceColumn) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Model\Helper\ExcelFileHelper.cs:line 175
+   at UPP.Controllers.EmployeesController.PostEmployeeBulk(String userType) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\EmployeesController.cs:line 243
+Error occured in  PostEmployeeBulk method
+5/4/2021 4:09:16 PMSystem.FormatException: Input string was not in a correct format.
+   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at System.Convert.ToDouble(String value, IFormatProvider provider)
+   at UPP.Api.Model.Helper.ExcelFileHelper.ProcessWorkSheet(Sheet sheet, List`1& lstEmployeeDTO, WorkbookPart workbookPart, Char[] cellReferenceColumn) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Model\Helper\ExcelFileHelper.cs:line 175
+   at UPP.Controllers.EmployeesController.PostEmployeeBulk(String userType) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\EmployeesController.cs:line 243
+Error occured in  PostEmployeeBulk method
+5/5/2021 1:44:09 PMSystem.FormatException: Input string was not in a correct format.
+   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at System.Convert.ToDouble(String value, IFormatProvider provider)
+   at UPP.Api.Model.Helper.ExcelFileHelper.ProcessWorkSheet(Sheet sheet, List`1& lstEmployeeDTO, WorkbookPart workbookPart, Char[] cellReferenceColumn) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Model\Helper\ExcelFileHelper.cs:line 175
+   at UPP.Controllers.EmployeesController.PostEmployeeBulk(String userType) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\EmployeesController.cs:line 243
+Error occured in  PostEmployeeBulk method
+5/5/2021 1:44:47 PMSystem.FormatException: Input string was not in a correct format.
+   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at System.Convert.ToDouble(String value, IFormatProvider provider)
+   at UPP.Api.Model.Helper.ExcelFileHelper.ProcessWorkSheet(Sheet sheet, List`1& lstEmployeeDTO, WorkbookPart workbookPart, Char[] cellReferenceColumn) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Model\Helper\ExcelFileHelper.cs:line 175
+   at UPP.Controllers.EmployeesController.PostEmployeeBulk(String userType) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\EmployeesController.cs:line 243
+Error occured in  PostEmployeeBulk method
+5/5/2021 1:45:53 PMSystem.FormatException: Input string was not in a correct format.
+   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at System.Convert.ToDouble(String value, IFormatProvider provider)
+   at UPP.Api.Model.Helper.ExcelFileHelper.ProcessWorkSheet(Sheet sheet, List`1& lstEmployeeDTO, WorkbookPart workbookPart, Char[] cellReferenceColumn) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Model\Helper\ExcelFileHelper.cs:line 175
+   at UPP.Controllers.EmployeesController.PostEmployeeBulk(String userType) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\EmployeesController.cs:line 243
+Error occured in  PostEmployeeBulk method
+5/5/2021 3:59:07 PMSystem.InvalidOperationException: Sequence contains no matching element
+   at System.Linq.ThrowHelper.ThrowNoMatchException()
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source, Func`2 predicate)
+   at UPP.Controllers.EmployeesController.PostEmployeeBulk(String userType) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\EmployeesController.cs:line 251
+Error occured in  PostEmployeeBulk method
+5/5/2021 4:00:17 PMSystem.InvalidOperationException: Sequence contains no matching element
+   at System.Linq.ThrowHelper.ThrowNoMatchException()
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source, Func`2 predicate)
+   at UPP.Controllers.EmployeesController.PostEmployeeBulk(String userType) in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\EmployeesController.cs:line 251
+Error occured in  PostEmployeeBulk method
+8/11/2021 4:07:36 PMSystem.InvalidOperationException: There are multiple properties with the [ForeignKey] attribute pointing to navigation 'DeliveryDriver.Employee'. To define a composite foreign key using data annotations, use the [ForeignKey] attribute on the navigation.
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.ForeignKeyAttributeConvention.FindForeignKeyAttributeOnProperty(IConventionEntityType entityType, String navigationName)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.ForeignKeyAttributeConvention.UpdateRelationshipBuilder(IConventionForeignKeyBuilder relationshipBuilder, IConventionContext context)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.ForeignKeyAttributeConvention.ProcessForeignKeyAdded(IConventionForeignKeyBuilder relationshipBuilder, IConventionContext`1 context)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnForeignKeyAdded(IConventionForeignKeyBuilder relationshipBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.OnForeignKeyAddedNode.Run(ConventionDispatcher dispatcher)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.DelayedConventionScope.Run(ConventionDispatcher dispatcher)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ConventionBatch.Run()
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ConventionBatch.Dispose()
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnModelInitialized(IConventionModelBuilder modelBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.OnModelInitialized(IConventionModelBuilder modelBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model..ctor(ConventionSet conventions, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.ModelBuilder..ctor(ConventionSet conventions, ModelDependencies modelDependencies, Boolean _)
+   at Microsoft.EntityFrameworkCore.ModelBuilder..ctor(ConventionSet conventions, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__7_3(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityType()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.CheckState()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityQueryable()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.Select[TSource,TResult](IQueryable`1 source, Expression`1 selector)
+   at UPP.Controllers.EmployeesController.GetEmployees() in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\EmployeesController.cs:line 52
+Error occured in the GetEmployees method
+8/11/2021 4:08:00 PMSystem.InvalidOperationException: There are multiple properties with the [ForeignKey] attribute pointing to navigation 'DeliveryDriver.Employee'. To define a composite foreign key using data annotations, use the [ForeignKey] attribute on the navigation.
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.ForeignKeyAttributeConvention.FindForeignKeyAttributeOnProperty(IConventionEntityType entityType, String navigationName)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.ForeignKeyAttributeConvention.UpdateRelationshipBuilder(IConventionForeignKeyBuilder relationshipBuilder, IConventionContext context)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.ForeignKeyAttributeConvention.ProcessForeignKeyAdded(IConventionForeignKeyBuilder relationshipBuilder, IConventionContext`1 context)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnForeignKeyAdded(IConventionForeignKeyBuilder relationshipBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.OnForeignKeyAddedNode.Run(ConventionDispatcher dispatcher)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.DelayedConventionScope.Run(ConventionDispatcher dispatcher)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ConventionBatch.Run()
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ConventionBatch.Dispose()
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnModelInitialized(IConventionModelBuilder modelBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.OnModelInitialized(IConventionModelBuilder modelBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model..ctor(ConventionSet conventions, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.ModelBuilder..ctor(ConventionSet conventions, ModelDependencies modelDependencies, Boolean _)
+   at Microsoft.EntityFrameworkCore.ModelBuilder..ctor(ConventionSet conventions, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__7_3(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityType()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.CheckState()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityQueryable()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.Select[TSource,TResult](IQueryable`1 source, Expression`1 selector)
+   at UPP.Controllers.EmployeesController.GetEmployees() in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\EmployeesController.cs:line 52
+Error occured in the GetEmployees method
+8/11/2021 4:08:06 PMSystem.InvalidOperationException: There are multiple properties with the [ForeignKey] attribute pointing to navigation 'DeliveryDriver.Employee'. To define a composite foreign key using data annotations, use the [ForeignKey] attribute on the navigation.
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.ForeignKeyAttributeConvention.FindForeignKeyAttributeOnProperty(IConventionEntityType entityType, String navigationName)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.ForeignKeyAttributeConvention.UpdateRelationshipBuilder(IConventionForeignKeyBuilder relationshipBuilder, IConventionContext context)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.ForeignKeyAttributeConvention.ProcessForeignKeyAdded(IConventionForeignKeyBuilder relationshipBuilder, IConventionContext`1 context)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnForeignKeyAdded(IConventionForeignKeyBuilder relationshipBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.OnForeignKeyAddedNode.Run(ConventionDispatcher dispatcher)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.DelayedConventionScope.Run(ConventionDispatcher dispatcher)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ConventionBatch.Run()
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ConventionBatch.Dispose()
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnModelInitialized(IConventionModelBuilder modelBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.OnModelInitialized(IConventionModelBuilder modelBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model..ctor(ConventionSet conventions, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.ModelBuilder..ctor(ConventionSet conventions, ModelDependencies modelDependencies, Boolean _)
+   at Microsoft.EntityFrameworkCore.ModelBuilder..ctor(ConventionSet conventions, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__7_3(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityType()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.CheckState()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityQueryable()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.Select[TSource,TResult](IQueryable`1 source, Expression`1 selector)
+   at UPP.Controllers.EmployeesController.GetEmployees() in C:\Users\user\source\repos\personal\User-Profile-Preview\UPP.Api\Controllers\EmployeesController.cs:line 52
+Error occured in the GetEmployees method

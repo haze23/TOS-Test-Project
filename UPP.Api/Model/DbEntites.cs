@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using UPP.Api.Model;
 
 namespace UPP.Model
 {
@@ -21,7 +22,21 @@ namespace UPP.Model
         public virtual DbSet<Equity> Equities { get; set; }
         public virtual DbSet<Gender> Genders { get; set; }
         public virtual DbSet<EmployeeDepartment> EmployeeDepartments { get; set; }
-
+        public virtual DbSet<Booking> Booking { get; set; }
+        public virtual DbSet<BookingDescription> BookingDEscription { get; set; }
+        public virtual DbSet<Truck> Truck { get; set; }
+        public virtual DbSet<Delivery> Delivery { get; set; }
+        public virtual DbSet<PaymentTypes> PaymentTypes { get; set; }
+        public virtual DbSet<Province> Province { get; set; }
+        public virtual DbSet<Area> Area { get; set; }
+        public virtual DbSet<Consignor> Consignor { get; set; }
+        public virtual DbSet<Consignee> Consignee { get; set; }
+        public virtual DbSet<Country> Country { get; set; }
+        public virtual DbSet<FuelType> FuelType { get; set; }
+        public virtual DbSet<Rate> Rate { get; set; }
+        public virtual DbSet<TransmissionType> TransmissionType { get; set; }
+        public virtual DbSet<WeightType> WeightType { get; set; }
+        public virtual DbSet<DeliveryDriver> DeliveryDriver { get; set; }
 
 
 
@@ -53,7 +68,6 @@ namespace UPP.Model
                 new Equity { EquityId = 1, EquityDesc = "Black", EquityCode = "BLK" },
                 new Equity { EquityId = 2, EquityDesc = "White", EquityCode = "WHT" }
             );
-
         }
 
     }

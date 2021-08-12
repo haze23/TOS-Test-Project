@@ -1,0 +1,9 @@
+<nb-card>
+    <nb-card-header>
+     Total Items in Cart
+     <i class="fa fa-cart-plus"></i>
+    </nb-card-header>
+    <nb-card-body>
+      <ng2-smart-table [settings]="settings" [source]="source" (custom)="onCustomAction($event)"></ng2-smart-table>
+    </nb-card-body>
+  </nb-card>

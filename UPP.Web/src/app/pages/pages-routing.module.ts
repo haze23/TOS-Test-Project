@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { PagesComponent } from './pages.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [{
   path: '',
@@ -10,12 +11,18 @@ const routes: Routes = [{
   children: [
     {
       path: 'dashboard',
+      component: DashboardComponent,
     },
     
     {
       path: 'facilitation',
       loadChildren: () => import('./upp/employee/employee.module')
         .then(m => m.EmployeeModule),
+    },
+    {
+      path: 'operations',
+      loadChildren: () => import('./upp/operations/operations.module')
+        .then(m => m.OperationsModule),
     },
     {
       path: 'lookup',

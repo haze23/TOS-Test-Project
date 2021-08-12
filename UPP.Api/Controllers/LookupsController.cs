@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using UPP.Model;
@@ -62,6 +63,8 @@ namespace UPP.Api.Controllers
                                   boundValue = a.GenderId,
                                   boundText = a.GenderDesc
                               });
+
+
           
             return list;
         }
@@ -70,6 +73,7 @@ namespace UPP.Api.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Lookup>>> getEmployeeDepartment()
         {
+
             var list = new List<Lookup>
             {
                 new Lookup

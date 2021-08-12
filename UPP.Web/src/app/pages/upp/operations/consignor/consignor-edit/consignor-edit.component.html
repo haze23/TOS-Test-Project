@@ -1,0 +1,70 @@
+<div class="row">
+    <div class="col-md-12">
+        <nb-card>
+            <nb-card-header>Add Consignor </nb-card-header>
+            <nb-card-body>
+                <form [formGroup]="consignorForm">
+                    <div class="form-group row col-sm-12">
+                        <label for="consignorName" class="label col-sm-2 col-form-label"> Name</label>
+                        <div class="col-sm-4">
+                            <input type="text" nbInput fullWidth formControlName="consignorName">
+                        </div>
+                        <label for="address" class="label col-sm-2 col-form-label">Address</label>
+                        <div class="col-sm-4">
+                            <input type="text" nbInput fullWidth formControlName="address">
+                        </div>
+                    </div>
+                    <div class="form-group row col-sm-12">
+                        <label for="countryId" class="label col-sm-2 col-form-label">Country</label>
+                        <div class="col-sm-4">
+                            <nb-select nbSelect fullWidth formControlName="countryId"
+                                [selected]="consignor.countryId + ''">
+                                <nb-option *ngFor="let e of countries" value="{{e.boundValue}}"> {{ e.boundText }}
+                                </nb-option>
+                            </nb-select>
+                        </div>
+                        <label for="provinceId" class="label col-sm-2 col-form-label">Province</label>
+                        <div class="col-sm-4">
+                            <nb-select nbSelect fullWidth formControlName="provinceId"
+                                [selected]="consignor.provinceId + ''">
+                                <nb-option *ngFor="let e of provinces" value="{{e.boundValue}}"> {{ e.boundText }}
+                                </nb-option>
+                            </nb-select>
+                        </div>          
+                    </div>
+                    <div class="form-group row col-sm-12">
+                        <label for="areaId" class="label col-sm-2 col-form-label">Area</label>
+                        <div class="col-sm-4">
+                            <nb-select nbSelect fullWidth formControlName="areaId" [selected]="consignor.areaId + ''">
+                                <nb-option *ngFor="let e of areas" value="{{e.boundValue}}"> {{ e.boundText }}
+                                </nb-option>
+                            </nb-select>
+                        </div>
+                    </div>
+                    <div class="form-group row col-sm-12">
+                        <label for="contactNo" class="label col-sm-2 col-form-label">Contact No</label>
+                        <div class="col-sm-4">
+                            <input type="text" nbInput fullWidth formControlName="contactNo">
+                        </div>
+                        <label for="email" class="label col-sm-2 col-form-label">Email</label>
+                        <div class="col-sm-4">
+                            <input type="text" nbInput fullWidth formControlName="email">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <hr />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="offset-sm-2 col-sm-10">
+                            <button type="submit" (click)="onSubmit()" nbButton
+                                status="primary" outline>Save</button>
+                            <button type="submit" style="margin-left: 10px;" (click)="onCancel()" nbButton
+                                status="primary" outline>Cancel</button>
+                        </div>
+                    </div>
+                </form>
+            </nb-card-body>
+        </nb-card>
+    </div>

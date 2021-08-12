@@ -18,7 +18,10 @@ namespace UPP.Model
         //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
         public DateTime Dob { get; set; }
         public  int EquityId { get; set; }
-        public  int GenderId { get; set; }
+        public string EquityDesc { get; internal set; }
+
+        public int GenderId { get; set; }
+        public string GenderDesc { get; internal set; }
         public string EmployeeNo { get; set; }
         public string Email { get; set; }
         public string Website { get; set; }
@@ -26,10 +29,12 @@ namespace UPP.Model
         public virtual string Address { get; set; }
         public string Bio { get; set; }
         public  int EmpDeptId { get; set; }
+        public string EmpDeptDesc { get; internal set; }
+
         public string ImageUrl { get; set; }
 
-        [DataType(DataType.Date)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
+        //[DataType(DataType.Date)]
+        //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
         public DateTime StartDate { get; set; }
 
         [DataType(DataType.Date)]
